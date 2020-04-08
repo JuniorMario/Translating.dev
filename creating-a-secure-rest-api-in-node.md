@@ -130,4 +130,37 @@ Cole o código no arquivo package.json e depois disso rode `npm install`.
 Parabéns, agora você tem todas as dependência e configurações necessárias para rodar
 nossa API REST simples.
 
+Nosso projeto vai conter 3 pastas modulares:
+	- "Common" (lidando com todos os serviços e informações compartilhados entre os modulos)
+	- "users" (tudo relacionado aos usuários) 
+	- "auth" (lida com o fluxo de de gerar JWT e fluxo de login)
 
+## Criando o modulo de usuário
+
+Nós estaremos usando Mongoose, uma biblioteca ODM(object data modeling) para o MongoDB, para
+criar o modelo de usuário dentro do esquema de usuários.
+
+```
+const userSchema = new Schema({
+	primeiroNome: String,
+	sobrenome: String,
+	email: String,
+	senha: String,
+	nivelDePermissão: Number
+});
+```
+
+Uma vez que o esquema foi definido, nós podemos fácilmente anexa-lo ao modelo de usuário.
+
+`const userModel = mongoose.model('Users', userSchema)`
+
+depois disso, nós podemos usar esse modelo para implementar todas as operações de CRUD 
+que nós quisermos com os endpoints dentro.
+
+Vamos começar com a operação "Criar usuário" definindo uma rota em `users/routes.config.js`:
+
+```
+app.post('/users', [
+   UsersController.insert
+]);
+``` 
