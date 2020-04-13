@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html style="--editor-top-position:1px; --editor-left-position:31px; --editor-width:318.6000061035156px; --editor-height:353px;" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link id="favicon" rel="icon" href="https://glitch.com/embed/favicon.ico?v=3" type="image/x-icon">
+  <link id="apple-touch-icon" rel="apple-touch-icon" sizes="180x180" href="https://glitch.com/embed/apple-touch-icon.png?v=3">
+  <link id="oembed" rel="alternate" type="application/json+oembed" href="https://api.glitch.com/projects/nodejs-dev-0001-01/oembed" title="nodejs-dev-0001-01 oembed link">
+  <link rel="stylesheet" type="text/css" href="a_data/3a8e55c6-b1f3-4659-99eb-125ae72bd084.css">
+  
+  <link class="theme" type="text/css" href="https://glitch.com/embed/themes/cosmos.version.acabda2d896230ce0bc3.css">
+  
+  <link class="theme" rel="stylesheet" type="text/css" href="a_data/sugar.css">
+  
+
+  <script src="a_data/jsx.js"></script><script type="text/javascript" async="" src="a_data/amplitude-5.js"></script><script src="a_data/css.js"></script><script src="a_data/javascript.js"></script><script src="a_data/xml.js"></script><script src="a_data/htmlmixed.js"></script><script type="text/javascript" async="" src="a_data/analytics.js"></script><script>
+    (function () {
+      try {
+        var path = document.location.hash.split("?")[0].split("/");
+        var domain = path[1];
+
+        var NOT_DOMAINS = [
+          "new-project",
+          "sign-in",
+          "facebook",
+          "sign-out",
+          "sign-up",
+          "email-login"
+        ];
+
+        if (domain === undefined || domain.length === 0 || path.length !== 2 || NOT_DOMAINS.includes(domain)) {
+          return;
+        }
+
+        (new Image()).src = "https://api.glitch.com" + "/" + domain + "/preempt";
+      } catch (e) {
+        console.error(e);
+       }
+    })();
+  </script>
+
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src
+      'self';
+    connect-src
+      'self'
+      api.glitch.com api.glitch.development api.staging.glitch.com
+      wss://api.glitch.com wss://api.glitch.development wss://api.staging.glitch.com wss://glitch.development
+      https://*.woopra.com
+      api.segment.io
+      api.github.com
+      libraries.io
+      s3.amazonaws.com
+      https://securetoken.googleapis.com
+      https://www.googleapis.com
+      
+      https://settings.luckyorange.net wss://visitors.live wss://*.visitors.live https://pubsub.googleapis.com https://api.luckyorange.com
+      https://sentry.io
+      
+      https://support-poster.glitch.me/post
+      
+      https://api.amplitude.com;
+    font-src
+      cloud.webtype.com;
+    frame-src
+      https://*.glitch.me https://*.glitch.staging.me https://*.glitch.development
+      https://accounts.google.com
+      https://content-firebase.googleapis.com/
+      blob:
+      data:
+      'self';
+    img-src
+      'self'
+      https://*
+      blob:
+      data:
+      
+     	https://d10lpsik1i8c69.cloudfront.net;
+    media-src
+      'self'
+      https://*
+      blob:
+      data:;
+    object-src
+      blob:
+      data:
+      'self';
+    script-src
+      'self'
+      
+      
+      
+      https://apis.google.com
+      https://cdnjs.cloudflare.com
+      https://cdn.segment.com
+      https://*.woopra.com
+      'sha256-aROmP5KBVON8dHdF7kTobxNwhI67hJuBpk+jNh/jbM4='
+      'sha256-lIXJkTrfgeKmujhwsIkqzNbMkplZdPFm1ERXsf46uOw='
+      'sha256-To0Iwo79L42agXa29pvaAn64gM4rwT1BflbRPGdqcUg='
+      
+      'sha256-IWN+DH0UXsSKPql06C66AvLM8/jMYbOe+wVRfPlzHDY='
+      
+      http://www.luckyorange.com https://ssl.luckyorange.com https://d10lpsik1i8c69.cloudfront.net
+      
+      https://cdn.amplitude.com;
+    style-src
+      'self'
+      'unsafe-inline'
+      https://cloud.webtype.com
+      
+     	https://d10lpsik1i8c69.cloudfront.net;
+    worker-src
+      'self'
+      
+      blob:
+  ">
+
+  <title>server.js – nodejs-dev-0001-01</title>
+  <noscript>
+    <title>Glitch</title>
+  </noscript>
+
+  <meta name="description" content="Combining automated deployment, instant hosting &amp; collaborative editing, Glitch gets you straight to coding so you can build full-stack web apps, fast">
+  <meta name="keywords" content="developer, javascript, nodejs, editor, ide, development, online, web, code editor, html, css">
+
+  <!-- facebook open graph tags -->
+  <meta name="og:type" content="website">
+  <meta name="og:url" content="https://glitch.com">
+  <meta name="og:title" content="Glitch">
+  <meta name="og:description" content="Combining automated deployment, instant hosting &amp; collaborative editing, Glitch gets you straight to coding so you can build full-stack web apps, fast">
+  <meta name="og:image" content="https://glitch.com/edit/images/logos/glitch/social-card@2x.png">
+  <!-- twitter card tags (stacks with og: tags) -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@glitch">
+  <meta name="twitter:title" content="Glitch">
+  <meta name="twitter:description" content="Combining automated deployment, instant hosting &amp; collaborative editing, Glitch gets you straight to coding so you can build full-stack web apps, fast">
+  <meta name="twitter:image" content="https://glitch.com/edit/images/logos/glitch/social-card@2x.png">
+  <meta name="twitter:image:alt" content="Glitch Logo">
+  <meta name="twitter:url" content="https://glitch.com">
+
+  <script>
+    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";}}();
+  </script>
+
+<style data-styled="" data-styled-version="4.4.1"></style></head>
+<body class="embedded">
+  <noscript>
+    <h1>
+      To use Glitch, please enable JavaScript
+    </h1>
+  </noscript>
+
+  <div id="__react-overlay-container"></div>
+  <div id="__react-pop-root"></div>
+  <div id="__react-app-root"><div class="emojiCache"><div class="icon ask-for-help"></div><div class="emoji ambulance"></div><div class="emoji balloon"></div><div class="emoji bento"></div><div class="emoji bomb"></div><div class="emoji bouquet"></div><div class="emoji carp-streamer"></div><div class="emoji dog"></div><div class="emoji chart-with-upwards-trend"></div><div class="emoji clap"></div><div class="emoji clock3"></div><div class="emoji construction-worker"></div><div class="emoji crescent-moon"></div><div class="emoji crystal-ball"></div><div class="emoji cyclone"></div><div class="emoji dancers"></div><div class="emoji email"></div><div class="emoji eyeglasses"></div><div class="emoji eyes"></div><div class="emoji facebook"></div><div class="emoji female-technologist"></div><div class="emoji ferris-wheel"></div><div class="emoji fire-engine"></div><div class="emoji framed-picture"></div><div class="emoji ghost"></div><div class="emoji hamburger"></div><div class="emoji heart-eyes"></div><div class="emoji helmet-with-white-cross"></div><div class="emoji hibiscus"></div><div class="emoji lady-beetle"></div><div class="emoji last-quarter-moon-with-face"></div><div class="emoji lock"></div><div class="emoji love-hotel"></div><div class="emoji love-letter"></div><div class="emoji microphone"></div><div class="emoji musical-keyboard"></div><div class="emoji newspaper"></div><div class="emoji octagonal-sign"></div><div class="emoji octocat"></div><div class="emoji pager"></div><div class="emoji palm-tree"></div><div class="emoji paperclip"></div><div class="emoji rainbow"></div><div class="emoji raised-hand"></div><div class="emoji raising-hand-woman"></div><div class="emoji repeat"></div><div class="emoji rewind"></div><div class="emoji rose"></div><div class="emoji see-no-evil-monkey"></div><div class="emoji seedling"></div><div class="emoji selfie"></div><div class="emoji sparkles"></div><div class="emoji sparkling-heart"></div><div class="emoji splashing-sweat"></div><div class="emoji sunglasses"></div><div class="emoji sunny"></div><div class="emoji thumbsdown"></div><div class="emoji thumbsup"></div><div class="emoji tokyo-tower"></div><div class="emoji traffic-light"></div><div class="emoji truck"></div><div class="emoji turtle"></div><div class="emoji two"></div><div class="emoji two-women-holding-hands"></div><div class="emoji umbrella"></div><div class="emoji wave"></div></div><div id="application" class=""><span data-module="VisuallyHidden" class="visually-hidden__VisuallyHidden-sc-1g3xwb6-0 eaWPOU"><div role="log" aria-relevant="additions text" aria-atomic="true" aria-live="polite"></div><div role="log" aria-relevant="additions text" aria-atomic="true" aria-live="polite"></div><div role="log" aria-relevant="additions text" aria-atomic="true" aria-live="assertive"></div><div role="log" aria-relevant="additions text" aria-atomic="true" aria-live="assertive"></div></span><main id="editor" class=""><div class="editor-container"><section id="sidebar" class="sidebar sidebar-collapsed" style="width: 250px;"><div class="icon icon-collapse" tabindex="0" role="button"></div><div class="sidebar-status-when-collapsed"></div><section id="sidebar-files" class="sidebar-section sidebar-files"><div class="files"><ul class="filetree" data-testid="filetree"><li class="filetree-child assets-sidebar-icon other" tabindex="0">assets</li><li class="filetree-child file other" style="padding-left: 5px;" tabindex="0" title=".env"><div class="secrets-sidebar-icon icon"></div><div class="display-file-name" aria-label=".env"><span class="filename"><span class="extension-type other">.env</span></span></div></li><li class="filetree-child file hidden other" style="padding-left: 5px;" tabindex="0" title=".glitch-assets"><div class="display-file-name" aria-label=".glitch-assets"><span class="filename"><span class="extension-type other">.glitch-assets</span></span></div></li><li class="filetree-child file data" style="padding-left: 5px;" tabindex="0" title="package.json"><div class="display-file-name" aria-label="package.json"><span class="filename"><span class="truncated-text" aria-label="package"><span aria-hidden="true">p</span><span aria-hidden="true" class="truncated-text-center-segment">ackag</span><span aria-hidden="true">e</span></span><span class="extension-type data">.json</span></span></div></li><li class="filetree-child file active logic" style="padding-left: 5px;" tabindex="0" title="server.js"><div class="display-file-name" aria-label="server.js"><span class="filename"><span class="truncated-text" aria-label="server"><span aria-hidden="true">s</span><span aria-hidden="true" class="truncated-text-center-segment">erve</span><span aria-hidden="true">r</span></span><span class="extension-type logic">.js</span></span></div></li></ul></div></section><div class="resizer"></div></section><aside class="notifications"><div class="notification notifyTakeActionToEdit notification-close"><div class="close icon" role="button" tabindex="0"></div><div class="button-wrap"><button class="" data-testid="remix-to-edit"><span>Remix to Edit </span><span class="emoji microphone"></span></button></div></div></aside><footer class="footer-options"></footer><section class="media-wrap hidden"></section><section class="assets-wrap hidden"><div class="blank-slate blank-slate-with-editor-helper"><div class="welcome-message welcome-message-with-image"><div><p><strong>No Assets Yet</strong></p><p>Drag files here to use them in your project.<br>Add images, music, and more.</p></div></div></div></section><section class="editor-wrap"><div><article id="text-editor" class="text-editor"><div class="CodeMirror cm-s-default"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 12px; left: 46px;"><textarea style="position: absolute; bottom: -1em; padding: 0px; width: 1px; height: 1em; outline: currentcolor none medium;" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" wrap="off"></textarea></div><div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true" style="display: block; bottom: 12px;"><div style="min-width: 1px; height: 384px;"></div></div><div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true" style="display: block; right: 12px; left: 40px;"><div style="height: 100%; min-height: 1px; width: 527px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true" style="display: block; height: 12px; width: 12px;"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1" draggable="true"><div class="CodeMirror-sizer" style="margin-left: 40px; min-width: 494.667px; margin-bottom: -12px; border-right-width: 18px; min-height: 384px; padding-right: 12px; padding-bottom: 12px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div style="position: relative; outline: currentcolor none medium;" role="presentation"><div class="CodeMirror-measure"><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>14</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 6px; top: 0px; height: 16px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -40px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 10px; width: 21px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span class="cm-keyword">const</span> <span class="cm-def">http</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">'http'</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -40px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 10px; width: 21px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -40px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 10px; width: 21px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span class="cm-keyword">const</span> <span class="cm-def">hostname</span> <span class="cm-operator">=</span> <span class="cm-string">'127.0.0.1'</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -40px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 10px; width: 21px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span class="cm-keyword">const</span> <span class="cm-def">port</span> <span class="cm-operator">=</span> <span class="cm-variable">process</span>.<span class="cm-property">env</span>.<span class="cm-property">PORT</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -40px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 10px; width: 21px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -40px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 10px; width: 21px;">6</div><div class="CodeMirror-gutter-elt" style="left: 31px; width: 9px;"><div class="CodeMirror-foldgutter-open CodeMirror-guttermarker-subtle"></div></div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span class="cm-keyword">const</span> <span class="cm-def">server</span> <span class="cm-operator">=</span> <span class="cm-variable">http</span>.<span class="cm-property">createServer</span>((<span class="cm-def">req</span>, <span class="cm-def">res</span>) <span class="cm-operator">=&gt;</span> {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -40px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 10px; width: 21px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation">  <span class="cm-variable-2">res</span>.<span class="cm-property">statusCode</span> <span class="cm-operator">=</span> <span class="cm-number">200</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -40px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 10px; width: 21px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation">  <span class="cm-variable-2">res</span>.<span class="cm-property">setHeader</span>(<span class="cm-string">'Content-Type'</span>, <span class="cm-string">'text/plain'</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -40px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 10px; width: 21px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation">  <span class="cm-variable-2">res</span>.<span class="cm-property">end</span>(<span class="cm-string">'Hello World!\n'</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -40px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 10px; width: 21px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation">})</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -40px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 10px; width: 21px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -40px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 10px; width: 21px;">12</div><div class="CodeMirror-gutter-elt" style="left: 31px; width: 9px;"><div class="CodeMirror-foldgutter-open CodeMirror-guttermarker-subtle"></div></div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span class="cm-variable">server</span>.<span class="cm-property">listen</span>(<span class="cm-variable">port</span>, <span class="cm-variable">hostname</span>, () <span class="cm-operator">=&gt;</span> {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -40px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 10px; width: 21px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation">  <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string-2">`Server running at http://${</span><span class="cm-variable">hostname</span><span class="cm-string-2">}:${</span><span class="cm-variable">port</span><span class="cm-string-2">}/`</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -40px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 10px; width: 21px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation">})</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 18px; width: 1px; border-bottom: 12px solid transparent; top: 384px;"></div><div class="CodeMirror-gutters" style="left: 0px; height: 414px;"><div class="CodeMirror-gutter CodeMirror-lint-markers"></div><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 21px;"></div><div class="CodeMirror-gutter CodeMirror-foldgutter"></div></div></div></div></article></div></section></div><div id="app-preview" class="app-preview is-embedded app-preview-transition" style="width: 30%;"><div class="iframe-wrapper"><iframe allow="geolocation; microphone; camera; midi; vr; encrypted-media" src="a_data/a.asc" data-testid="app-preview-iframe" title="Preview of nodejs-dev-0001-01"></iframe></div></div></main><div class="embed-helper"><a class="project-name" href="https://glitch.com/~nodejs-dev-0001-01" target="_blank" rel="noopener noreferrer"><img class="project-avatar" src="a_data/8ee34d73-d76a-42b9-9926-49adcb567d59.png" alt="Avatar for nodejs-dev-0001-01">nodejs-dev-0001-01</a><div style="flex: 1 1 0%;"></div><div class="share-project"><button class="opens-pop-over"><span class="label">Share</span></button></div><div class="switch-view"><button class="view-app">View App</button></div><div class="fullscreen-button"><a class="button" href="https://glitch.com/edit/#!/nodejs-dev-0001-01" target="_blank" rel="noopener noreferrer" aria-label="Open Source"><span class="fullscreen emoji"></span></a></div><div class="helper-icon"><a class="glitch-logo" href="https://glitch.com/~nodejs-dev-0001-01" target="_blank" rel="noreferrer noopener" aria-label="nodejs-dev-0001-01"></a></div></div></div></div>
+
+  
+  <script src="a_data/index.js"></script>
+  
+  <script src="a_data/api.js"></script>
+
+
+</body></html>

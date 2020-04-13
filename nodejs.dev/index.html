@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+<html class="gr__nodejs_dev" data-react-helmet="lang" lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style data-href="/styles.69730a42c1294cb57fb8.css">
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=latin,latin-ext);
+    @import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic&subset=latin,latin-ext);
+
+    pre[class*=language-].line-numbers {
+      position: relative;
+      padding-left: 3.8em;
+      counter-reset: linenumber
+    }
+
+    pre[class*=language-].line-numbers>code {
+      position: relative;
+      white-space: inherit
+    }
+
+    .line-numbers .line-numbers-rows {
+      position: absolute;
+      pointer-events: none;
+      top: 0;
+      font-size: 100%;
+      left: -3.8em;
+      width: 3em;
+      letter-spacing: -1px;
+      border-right: 1px solid #999;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none
+    }
+
+    .line-numbers-rows>span {
+      pointer-events: none;
+      display: block;
+      counter-increment: linenumber
+    }
+
+    .line-numbers-rows>span:before {
+      content: counter(linenumber);
+      color: #999;
+      display: block;
+      padding-right: .8em;
+      text-align: right
+    }
+
+    code[class*=language-],
+    pre[class*=language-] {
+      color: #f8f8f2;
+      background: none;
+      text-shadow: 0 1px rgba(0, 0, 0, .3);
+      font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+      font-size: 1em;
+      text-align: left;
+      white-space: pre;
+      word-spacing: normal;
+      word-break: normal;
+      word-wrap: normal;
+      line-height: 1.5;
+      -moz-tab-size: 4;
+      -o-tab-size: 4;
+      tab-size: 4;
+      -webkit-hyphens: none;
+      -ms-hyphens: none;
+      hyphens: none
+    }
+
+    pre[class*=language-] {
+      padding: 1em;
+      margin: .5em 0;
+      overflow: auto;
+      border-radius: .3em
+    }
+
+    :not(pre)>code[class*=language-],
+    pre[class*=language-] {
+      background: #272822
+    }
+
+    :not(pre)>code[class*=language-] {
+      padding: .1em;
+      border-radius: .3em;
+      white-space: normal
+    }
+
+    .token.cdata,
+    .token.comment,
+    .token.doctype,
+    .token.prolog {
+      color: #708090
+    }
+
+    .token.punctuation {
+      color: #f8f8f2
+    }
+
+    .namespace {
+      opacity: .7
+    }
+
+    .token.constant,
+    .token.deleted,
+    .token.property,
+    .token.symbol,
+    .token.tag {
+      color: #f92672
+    }
+
+    .token.boolean,
+    .token.number {
+      color: #ae81ff
+    }
+
+    .token.attr-name,
+    .token.builtin,
+    .token.char,
+    .token.inserted,
+    .token.selector,
+    .token.string {
+      color: #a6e22e
+    }
+
+    .language-css .token.string,
+    .style .token.string,
+    .token.entity,
+    .token.operator,
+    .token.url,
+    .token.variable {
+      color: #f8f8f2
+    }
+
+    .token.atrule,
+    .token.attr-value,
+    .token.class-name,
+    .token.function {
+      color: #e6db74
+    }
+
+    .token.keyword {
+      color: #66d9ef
+    }
+
+    .token.important,
+    .token.regex {
+      color: #fd971f
+    }
+
+    .token.bold,
+    .token.important {
+      font-weight: 700
+    }
+
+    .token.italic {
+      font-style: italic
+    }
+
+    .token.entity {
+      cursor: help
+    }
+
+    html {
+      font-size: 10px;
+      margin: 0
+    }
+
+    body {
+      background: var(--gray0);
+      color: var(--gray9);
+      font-family: var(--sans-serif);
+      font-size: 1.8rem;
+      margin: 0;
+      padding-top: var(--nav-height);
+      --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 72px), 0 100%);
+      --banner-gradient: linear-gradient(90deg, var(--purple9), var(--blue7));
+      --nav-height: 6.2rem;
+      --hero-height: 36.0rem;
+      --sans-serif: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      --serif: "Merriweather", Georgia, Cambria, "Times New Roman", Times, serif;
+      --gray0: #f5f6f7;
+      --gray1: #eaedef;
+      --gray2: #dae1e5;
+      --gray3: #cbd4d8;
+      --gray4: #b0bcc1;
+      --gray5: #929fa5;
+      --gray6: #6f7b82;
+      --gray7: #556066;
+      --gray8: #3f484c;
+      --gray9: #2d3438;
+      --red0: #faf0f0;
+      --red1: #fad4d4;
+      --red2: #fab6b6;
+      --red3: #fa8e8e;
+      --red4: #f55353;
+      --red5: #de1b1b;
+      --red6: #b80d0d;
+      --red7: #8f0e0e;
+      --red8: #661414;
+      --red9: #451717;
+      --orange0: #fcf2e6;
+      --orange1: #fad8af;
+      --orange2: #f5bc76;
+      --orange3: #e89c3f;
+      --orange4: #cf7911;
+      --orange5: #ad5f00;
+      --orange6: #8a4d03;
+      --orange7: #693d07;
+      --orange8: #4d2f0b;
+      --orange9: #33210c;
+      --green0: #ecf2e9;
+      --green1: #c5e5b5;
+      --green2: #9acc7d;
+      --green3: #83ba63;
+      --green4: #5fa04d;
+      --green5: #417f38;
+      --green6: #2c682c;
+      --green7: #215127;
+      --green8: #193f1d;
+      --green9: #0f260f;
+      --blue0: #e8f4fa;
+      --blue1: #bbe5fa;
+      --blue2: #8dd4f7;
+      --blue3: #53baed;
+      --blue4: #229ad6;
+      --blue5: #0c7bb3;
+      --blue6: #066391;
+      --blue7: #064d70;
+      --blue8: #093952;
+      --blue9: #0c2938;
+      --purple0: #f5f0fa;
+      --purple1: #ead9fa;
+      --purple2: #dabcf7;
+      --purple3: #c79bf2;
+      --purple4: #ae74e8;
+      --purple5: #9656d6;
+      --purple6: #7d3cbd;
+      --purple7: #642b9e;
+      --purple8: #4b2175;
+      --purple9: #371c52;
+      --pink0: #faf0f4;
+      --pink1: #fad4e4;
+      --pink2: #fab4d1;
+      --pink3: #f78bb8;
+      --pink4: #ed5393;
+      --pink5: #d6246e;
+      --pink6: #b01355;
+      --pink7: #8a1244;
+      --pink8: #611535;
+      --pink9: #421527;
+      --brand-light: var(--green3);
+      --brand: var(--green5);
+      --brand-dark: var(--green7)
+    }
+
+    :not(pre)>code[class*=language-] {
+      background-color: var(--gray2) !important;
+      color: var(--gray9) !important;
+      padding: 0 6px !important;
+      text-decoration: none;
+      text-shadow: none
+    }
+
+    code[class*=language-],
+    pre[class*=language-] {
+      color: var(--gray2) !important;
+      background: var(--gray9) !important
+    }
+
+    .token.operator,
+    .token.punctuation {
+      color: var(--gray2) !important
+    }
+
+    .token.function {
+      color: var(--orange3) !important
+    }
+
+    .token.keyword {
+      color: var(--blue3) !important
+    }
+
+    .token.string {
+      color: var(--green3) !important
+    }
+
+    .token.number {
+      color: var(--purple3) !important
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 420px auto
+    }
+
+    :focus {
+      outline: var(--green3) dotted 2px
+    }
+
+    [data-is-focused=true] {
+      outline: none
+    }
+
+    .nav {
+      background: #fff;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, .33), 0 2px 3px rgba(0, 0, 0, .2);
+      height: var(--nav-height);
+      line-height: var(--nav-height);
+      left: 0;
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index: 999
+    }
+
+    .nav__logo {
+      display: block;
+      height: 42px;
+      margin: 0 24px 0 0
+    }
+
+    .nav__tabs {
+      text-decoration: none;
+      font-size: 14px;
+      margin-left: 16px
+    }
+
+    .nav__tabs>a {
+      text-decoration: none;
+      color: #000
+    }
+
+    .hero {
+      align-items: center;
+      display: flex;
+      grid-column-end: 3;
+      grid-column-start: 1;
+      height: var(--hero-height);
+      position: -webkit-sticky;
+      position: sticky;
+      top: -206px;
+      width: 100%;
+      z-index: 998
+    }
+
+    .hero h1 {
+      bottom: 28px;
+      color: #fff;
+      font-size: 4.2rem;
+      font-weight: 600;
+      left: 460px;
+      max-width: 768px;
+      position: relative;
+      z-index: 999
+    }
+
+    .diagonal-hero-bg {
+      background: var(--banner-gradient);
+      -webkit-clip-path: var(--banner-clip);
+      clip-path: var(--banner-clip);
+      content: "";
+      -webkit-filter: brightness(160%) saturate(45%);
+      filter: brightness(160%) saturate(45%);
+      height: 100%;
+      left: 0;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      width: 100%
+    }
+
+    .side-nav {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      height: calc(100vh - var(--nav-height));
+      margin-top: -92px;
+      overflow: auto;
+      overflow-x: hidden;
+      padding: 0 2.4rem;
+      position: -webkit-sticky;
+      position: sticky;
+      top: var(--nav-height);
+      width: 100%;
+      max-width: 36rem;
+      z-index: 998
+    }
+
+    .side-nav>:last-child {
+      padding-bottom: 230px
+    }
+
+    .side-nav:before {
+      background: var(--banner-gradient);
+      background-color: var(--gray9);
+      background-size: 100vw 100%;
+      -webkit-clip-path: var(--banner-clip);
+      clip-path: var(--banner-clip);
+      content: "";
+      display: block;
+      -webkit-filter: brightness(160%) saturate(45%);
+      filter: brightness(160%) saturate(45%);
+      height: 92px;
+      margin: 0 -2.4rem -92px;
+      top: 0;
+      width: 100vw;
+      z-index: 998
+    }
+
+    .side-nav:before,
+    .side-nav__title {
+      position: -webkit-sticky;
+      position: sticky
+    }
+
+    .side-nav__title {
+      color: #000;
+      font-weight: 200;
+      letter-spacing: 2px;
+      margin: 2.8rem 0 2.4rem;
+      top: 2.8rem;
+      z-index: 999;
+      -webkit-transition: color .28s;
+      transition: color .28s
+    }
+
+    [data-browser=legacy] .side-nav__title {
+      background-attachment: fixed;
+      -webkit-background-clip: text;
+      background-clip: text;
+      background-image: -webkit-gradient(linear, left bottom, left top, color-stop(49%, #000), color-stop(51%, #fff));
+      background-image: linear-gradient(0deg, #000 49%, #fff 51%);
+      background-position: 0 calc(-50vh + var(--magic-hero-number));
+      background-size: 100% 100vh;
+      color: #fff;
+      -webkit-filter: opacity(.9);
+      filter: opacity(.9);
+      -webkit-text-fill-color: transparent;
+      will-change: background-position
+    }
+
+    .side-nav__list {
+      margin: 0;
+      padding: 0;
+      position: relative
+    }
+
+    .side-nav__item {
+      align-items: center;
+      border-radius: 4px;
+      box-sizing: border-box;
+      cursor: pointer;
+      line-height: 2.4rem;
+      list-style: none;
+      margin-left: 4.8rem;
+      padding: 1.2rem;
+      position: relative;
+      width: calc(100% - 4.8rem);
+      color: var(--gray9);
+      text-decoration: none;
+      display: block
+    }
+
+    .side-nav__item:last-of-type:after {
+      display: none
+    }
+
+    .side-nav__item:before {
+      background-size: 2.4rem;
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 2px var(--brand-light);
+      box-sizing: border-box;
+      content: " ";
+      display: block;
+      height: 2.4rem;
+      left: -3.6rem;
+      padding: 2px 4px;
+      position: absolute;
+      top: 1.2rem;
+      -webkit-transition: box-shadow .28s;
+      transition: box-shadow .28s;
+      overflow: hidden;
+      width: 2.4rem
+    }
+
+    .side-nav__item.side-nav__item--done:before {
+      content: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDQ0OC44IDQ0OC44IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NDguOCA0NDguODsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxnIGlkPSJjaGVjayI+CgkJPHBvbHlnb24gcG9pbnRzPSIxNDIuOCwzMjMuODUgMzUuNywyMTYuNzUgMCwyNTIuNDUgMTQyLjgsMzk1LjI1IDQ0OC44LDg5LjI1IDQxMy4xLDUzLjU1ICAgIiBmaWxsPSIjZjVmNmY3Ii8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==)
+    }
+
+    .side-nav__item.side-nav__item--active:before,
+    .side-nav__item.side-nav__item--done:before {
+      box-shadow: inset 0 0 0 2.4rem var(--brand-light)
+    }
+
+    .side-nav__item:hover:before {
+      box-shadow: inset 0 0 0 2.4rem var(--brand-light) !important
+    }
+
+    .side-nav__item:after {
+      background: var(--brand-light);
+      content: " ";
+      display: block;
+      height: calc(100% - 2.4rem - 8px);
+      left: calc(-2.4rem - 1px);
+      position: absolute;
+      top: calc(3.6rem + 4px);
+      width: 2px
+    }
+
+    .side-nav__open {
+      display: none;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 1.8rem;
+      margin-left: -.8rem;
+      width: 20px;
+      height: 27px;
+      padding: 12px 0;
+      background: #fff;
+      color: #fff;
+      overflow: visible;
+      border: none;
+      font-size: 1.8rem;
+      text-indent: 3.2rem;
+      line-height: 0;
+      font-weight: 200;
+      -webkit-transition: color .28s, background-color .28s;
+      transition: color .28s, background-color .28s;
+      outline: none;
+      background-clip: content-box;
+      z-index: 9999
+    }
+
+    .side-nav__open:after,
+    .side-nav__open:before {
+      content: "";
+      width: 100%;
+      height: 3px;
+      position: absolute;
+      top: calc(50% - 1.5px);
+      left: 0;
+      -webkit-transform: translateY(-250%);
+      transform: translateY(-250%);
+      background-color: #fff;
+      -webkit-transition: -webkit-transform .28s;
+      transition: -webkit-transform .28s;
+      transition: transform .28s;
+      transition: transform .28s, -webkit-transform .28s
+    }
+
+    .side-nav__open:after {
+      -webkit-transform: translateY(250%);
+      transform: translateY(250%)
+    }
+
+    .side-nav.side-nav--open .side-nav__open {
+      top: calc(var(--nav-height) + 1.8rem);
+      margin-bottom: -35px;
+      margin-top: 16px;
+      color: transparent;
+      background-color: transparent
+    }
+
+    .side-nav.side-nav--open .side-nav__open:before {
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg)
+    }
+
+    .side-nav.side-nav--open .side-nav__open:after {
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg)
+    }
+
+    .article-reader {
+      color: var(--gray9);
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.58;
+      letter-spacing: -.003em;
+      max-width: 768px;
+      padding-left: 4.2rem;
+      width: calc(100% - 36rem)
+    }
+
+    .article-reader__headline {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0
+    }
+
+    .article-reader p {
+      margin-bottom: 2.8rem
+    }
+
+    .article-reader a {
+      color: var(--gray9);
+      font-weight: 600;
+      text-decoration: underline;
+      -webkit-text-decoration-color: var(--gray4);
+      text-decoration-color: var(--gray4);
+      -webkit-transition: all .2s ease-out;
+      transition: all .2s ease-out
+    }
+
+    .article-reader a:hover {
+      color: var(--brand-light);
+      text-decoration: none
+    }
+
+    .article-reader h1,
+    .article-reader h2,
+    .article-reader h3,
+    .article-reader h4,
+    .article-reader h5,
+    .article-reader h6 {
+      font-family: var(--sans-serif);
+      margin-bottom: .1rem;
+      position: relative
+    }
+
+    .article-reader h1 {
+      margin-bottom: 2.8rem
+    }
+
+    .hero h1 {
+      cursor: pointer
+    }
+
+    .article-reader h2,
+    .article-reader h3 {
+      border-bottom: 1px solid #eaecef;
+      padding-bottom: .1rem
+    }
+
+    .article-reader h1 {
+      font-size: 4.8rem
+    }
+
+    .article-reader h2 {
+      font-size: 4rem
+    }
+
+    .article-reader h3 {
+      font-size: 3.2rem
+    }
+
+    .article-reader h4 {
+      font-size: 2.4rem
+    }
+
+    .article-reader h5 {
+      font-size: 2rem
+    }
+
+    .article-reader h6 {
+      font-size: 1.8rem;
+      font-weight: 800
+    }
+
+    .article-reader blockquote {
+      border-left: 3px solid var(--gray4);
+      color: var(--gray6);
+      font-size: 2rem;
+      font-style: italic;
+      font-weight: 200;
+      letter-spacing: 1px;
+      margin: 0 0 2.8rem;
+      padding: 1.8rem 0 1.8rem 3.2rem
+    }
+
+    .article-reader blockquote p {
+      margin: 0;
+      padding: 0
+    }
+
+    .stars {
+      --stars-small: 1928px 627px #767676, 626px 1242px #767676, 456px 1401px #767676, 1984px 1908px #767676, 391px 722px #767676, 1292px 1098px #767676, 29px 119px #767676, 445px 1913px #767676, 1861px 172px #767676, 1818px 1237px #767676, 1435px 660px #767676, 464px 928px #767676, 1771px 1053px #767676, 1033px 799px #767676, 553px 607px #767676, 1564px 1212px #767676, 915px 1084px #767676, 464px 847px #767676, 1456px 748px #767676, 997px 624px #767676, 1005px 1863px #767676, 1115px 1924px #767676, 1128px 1485px #767676, 827px 1590px #767676, 676px 1679px #767676, 660px 264px #767676, 320px 1327px #767676, 1738px 1375px #767676, 1597px 232px #767676, 457px 1891px #767676, 414px 725px #767676, 878px 248px #767676, 458px 221px #767676, 380px 428px #767676, 1364px 593px #767676, 267px 1967px #767676, 1266px 1579px #767676, 1867px 738px #767676, 1186px 970px #767676, 773px 1262px #767676, 1489px 1718px #767676, 1889px 1693px #767676, 154px 1834px #767676, 683px 484px #767676, 816px 1525px #767676, 1048px 1929px #767676, 1793px 977px #767676, 88px 1353px #767676, 760px 178px #767676, 1135px 521px #767676, 1391px 1168px #767676, 1031px 1017px #767676, 1260px 586px #767676, 1077px 420px #767676, 1693px 431px #767676, 629px 1488px #767676, 958px 533px #767676, 389px 1979px #767676, 1064px 1815px #767676, 1725px 581px #767676, 739px 1529px #767676, 263px 1626px #767676, 1803px 320px #767676, 801px 107px #767676, 1832px 957px #767676, 1828px 374px #767676, 1117px 1432px #767676, 1691px 1206px #767676, 78px 834px #767676, 570px 1935px #767676, 37px 1288px #767676, 29px 1763px #767676, 208px 1143px #767676, 832px 945px #767676, 477px 1782px #767676, 1495px 858px #767676, 287px 1926px #767676, 1399px 782px #767676, 111px 1178px #767676, 1570px 1587px #767676, 1152px 543px #767676, 876px 655px #767676, 895px 1895px #767676, 1140px 1759px #767676, 290px 593px #767676, 1803px 1699px #767676, 1180px 1328px #767676, 1465px 1795px #767676, 825px 1490px #767676, 256px 1972px #767676, 646px 1088px #767676, 65px 1221px #767676, 518px 1205px #767676, 1312px 1346px #767676, 632px 1551px #767676, 1989px 1924px #767676, 1090px 921px #767676, 695px 1486px #767676, 778px 1577px #767676, 174px 22px #767676, 1510px 1991px #767676, 392px 695px #767676, 1230px 773px #767676, 1868px 1191px #767676, 1504px 1619px #767676, 1440px 1116px #767676, 719px 1296px #767676, 900px 1868px #767676, 1553px 967px #767676, 1717px 1036px #767676, 518px 1187px #767676, 1558px 490px #767676, 339px 452px #767676, 1781px 1697px #767676, 1559px 829px #767676, 415px 1078px #767676, 856px 1622px #767676, 1820px 1026px #767676, 1235px 260px #767676, 1809px 1351px #767676, 1751px 765px #767676, 137px 1466px #767676, 1226px 1545px #767676, 660px 1105px #767676, 1076px 905px #767676, 1845px 446px #767676, 853px 1529px #767676, 50px 246px #767676, 1177px 1390px #767676, 1959px 983px #767676, 1616px 1208px #767676, 89px 1238px #767676, 1933px 822px #767676, 1006px 529px #767676, 760px 702px #767676, 1225px 1816px #767676, 1435px 547px #767676, 952px 1724px #767676, 1537px 1640px #767676, 566px 825px #767676, 1173px 349px #767676, 496px 688px #767676, 1799px 1086px #767676, 1913px 1322px #767676, 935px 859px #767676, 1537px 471px #767676, 248px 1467px #767676, 704px 576px #767676, 591px 168px #767676, 1647px 904px #767676, 851px 1971px #767676, 3px 210px #767676, 1397px 1735px #767676, 1234px 958px #767676, 518px 1073px #767676, 972px 553px #767676, 1905px 1892px #767676, 8px 566px #767676, 95px 1205px #767676, 804px 538px #767676, 1542px 810px #767676, 867px 1056px #767676, 1501px 988px #767676, 1388px 895px #767676, 92px 1827px #767676, 61px 1809px #767676, 140px 115px #767676, 1491px 52px #767676, 1669px 1895px #767676, 935px 879px #767676, 1185px 549px #767676, 586px 695px #767676, 1975px 925px #767676, 1663px 1854px #767676, 1567px 15px #767676, 943px 1307px #767676, 568px 1720px #767676, 563px 292px #767676, 1698px 374px #767676, 856px 759px #767676, 1895px 966px #767676, 105px 82px #767676, 1314px 1698px #767676, 826px 746px #767676, 1187px 385px #767676, 956px 368px #767676, 1047px 888px #767676, 1452px 1520px #767676, 168px 1289px #767676, 406px 340px #767676, 1999px 1402px #767676, 1901px 1628px #767676, 1778px 1664px #767676, 1276px 1181px #767676, 1391px 546px #767676, 1465px 1680px #767676, 727px 406px #767676, 1130px 1798px #767676, 972px 1636px #767676, 1463px 1855px #767676, 1542px 1078px #767676, 1470px 1055px #767676, 998px 536px #767676, 1265px 1692px #767676, 395px 459px #767676, 1132px 1527px #767676, 820px 743px #767676, 1533px 1552px #767676, 126px 659px #767676, 1797px 1020px #767676, 790px 1544px #767676, 184px 560px #767676, 243px 915px #767676, 1575px 166px #767676, 346px 1756px #767676, 1428px 611px #767676, 1257px 955px #767676, 1884px 777px #767676, 966px 1336px #767676, 595px 461px #767676, 428px 210px #767676, 664px 1476px #767676, 406px 812px #767676, 1115px 808px #767676, 847px 792px #767676, 982px 269px #767676, 534px 1770px #767676, 133px 20px #767676, 626px 1740px #767676, 1498px 606px #767676, 365px 291px #767676, 725px 666px #767676, 727px 1446px #767676, 505px 675px #767676, 1372px 302px #767676, 1419px 1947px #767676, 1858px 636px #767676, 1961px 2000px #767676, 1659px 1567px #767676, 1794px 746px #767676, 1490px 10px #767676, 704px 1930px #767676, 976px 1630px #767676, 1531px 905px #767676, 990px 1527px #767676, 866px 227px #767676, 1360px 982px #767676, 831px 1288px #767676, 1406px 806px #767676, 131px 45px #767676, 650px 99px #767676, 1760px 1969px #767676, 506px 1481px #767676, 30px 424px #767676, 229px 1881px #767676, 52px 162px #767676, 1154px 1980px #767676, 658px 10px #767676, 344px 1992px #767676, 1649px 1500px #767676, 1179px 1114px #767676, 1072px 171px #767676, 1975px 1027px #767676, 1619px 1224px #767676, 242px 841px #767676, 413px 1533px #767676, 1882px 1745px #767676, 1440px 1050px #767676, 1412px 198px #767676, 879px 1759px #767676, 809px 1456px #767676, 74px 50px #767676, 878px 358px #767676, 283px 433px #767676, 1056px 1773px #767676, 1727px 184px #767676, 1262px 1808px #767676, 560px 727px #767676, 769px 1457px #767676, 1469px 884px #767676, 1651px 1215px #767676, 757px 1131px #767676, 1663px 123px #767676, 814px 1675px #767676, 1163px 1360px #767676, 1930px 803px #767676, 1719px 871px #767676, 1078px 673px #767676, 678px 220px #767676, 1671px 1240px #767676, 1047px 229px #767676, 1066px 41px #767676, 1054px 146px #767676, 919px 1696px #767676, 1600px 7px #767676, 893px 271px #767676, 359px 968px #767676, 195px 1931px #767676, 858px 887px #767676, 930px 1447px #767676, 773px 102px #767676, 1737px 459px #767676, 190px 660px #767676, 271px 454px #767676, 1045px 1368px #767676, 419px 971px #767676, 643px 1171px #767676, 532px 345px #767676, 1766px 641px #767676, 403px 444px #767676, 394px 918px #767676, 1137px 92px #767676, 814px 931px #767676, 254px 342px #767676, 250px 980px #767676, 1558px 1786px #767676, 437px 1396px #767676, 376px 1053px #767676, 982px 227px #767676, 95px 1182px #767676, 1291px 125px #767676, 314px 1936px #767676, 503px 1055px #767676, 714px 1922px #767676, 1390px 1785px #767676, 1297px 199px #767676, 530px 1768px #767676, 998px 1710px #767676, 530px 163px #767676, 151px 1898px #767676, 1001px 675px #767676, 234px 1122px #767676, 1052px 1144px #767676, 1224px 1937px #767676, 1613px 620px #767676, 175px 1058px #767676, 1496px 1422px #767676, 360px 1796px #767676, 1907px 559px #767676, 355px 558px #767676, 1189px 784px #767676, 1170px 568px #767676, 96px 1978px #767676, 932px 1214px #767676, 394px 786px #767676, 1903px 336px #767676, 1137px 1421px #767676, 1563px 15px #767676, 1528px 763px #767676, 1621px 390px #767676, 1440px 1764px #767676, 1764px 85px #767676, 989px 1492px #767676, 877px 1561px #767676, 1009px 1157px #767676, 1737px 462px #767676, 520px 1995px #767676, 36px 247px #767676, 1849px 1938px #767676, 937px 941px #767676, 1864px 1950px #767676, 104px 692px #767676, 149px 1976px #767676, 1394px 1140px #767676, 1609px 629px #767676, 385px 1442px #767676, 1702px 1255px #767676, 413px 840px #767676, 1762px 825px #767676, 1535px 681px #767676, 1894px 988px #767676, 1355px 268px #767676, 541px 766px #767676, 1091px 1807px #767676, 1723px 856px #767676, 1096px 966px #767676, 1619px 1225px #767676, 337px 161px #767676, 664px 1623px #767676, 415px 1418px #767676, 534px 85px #767676, 278px 463px #767676, 405px 1549px #767676, 463px 106px #767676, 1227px 590px #767676, 1131px 849px #767676, 1497px 162px #767676, 1162px 953px #767676, 818px 1263px #767676, 1691px 1480px #767676, 1093px 630px #767676, 1884px 975px #767676, 1238px 517px #767676, 1234px 951px #767676, 1398px 1687px #767676, 1908px 856px #767676, 1307px 863px #767676, 1294px 689px #767676, 60px 442px #767676, 1860px 1115px #767676, 799px 778px #767676, 152px 1451px #767676, 1664px 1828px #767676, 1095px 1189px #767676, 717px 884px #767676, 1759px 1128px #767676, 891px 83px #767676, 1652px 1864px #767676, 289px 1149px #767676, 155px 1525px #767676, 663px 1323px #767676, 829px 545px #767676, 800px 1235px #767676, 687px 1912px #767676, 1655px 1256px #767676, 1721px 1205px #767676, 902px 1680px #767676, 574px 425px #767676, 164px 344px #767676, 131px 578px #767676, 1943px 65px #767676, 565px 1503px #767676, 1358px 1301px #767676, 1218px 381px #767676, 1203px 1601px #767676, 1389px 662px #767676, 779px 1580px #767676, 51px 736px #767676, 126px 266px #767676, 1708px 973px #767676, 790px 112px #767676, 1990px 914px #767676, 90px 1268px #767676, 407px 393px #767676, 27px 304px #767676, 1853px 1296px #767676, 1355px 1174px #767676, 1857px 89px #767676, 260px 776px #767676, 100px 1082px #767676, 695px 1560px #767676, 1576px 222px #767676, 565px 885px #767676, 297px 820px #767676, 1149px 1863px #767676, 187px 1252px #767676, 615px 974px #767676, 760px 1761px #767676, 1412px 1662px #767676, 611px 1154px #767676, 474px 1596px #767676, 1789px 768px #767676, 1634px 192px #767676, 1212px 1340px #767676, 1619px 1512px #767676, 611px 941px #767676, 113px 186px #767676, 1808px 510px #767676, 615px 1367px #767676, 547px 395px #767676, 1626px 1584px #767676, 1773px 397px #767676, 612px 1666px #767676, 361px 93px #767676, 1541px 1812px #767676, 911px 235px #767676, 120px 1681px #767676, 344px 1022px #767676, 1785px 53px #767676, 272px 400px #767676, 777px 573px #767676, 440px 1398px #767676, 1286px 1879px #767676, 1848px 1377px #767676, 1959px 1604px #767676, 1089px 1551px #767676, 1109px 1087px #767676, 1668px 1741px #767676, 1044px 1999px #767676, 660px 1671px #767676, 972px 1028px #767676, 1084px 655px #767676, 877px 1066px #767676, 457px 890px #767676, 424px 1492px #767676, 920px 867px #767676, 1546px 1409px #767676, 1729px 1482px #767676, 92px 1625px #767676, 468px 933px #767676, 1739px 683px #767676, 1130px 1578px #767676, 1340px 287px #767676, 828px 1961px #767676, 1130px 1823px #767676, 1810px 783px #767676, 1350px 631px #767676, 963px 1483px #767676, 1898px 1270px #767676, 1685px 1519px #767676, 1940px 1235px #767676, 57px 266px #767676, 1547px 92px #767676, 673px 1830px #767676, 900px 181px #767676, 132px 923px #767676, 1195px 113px #767676, 414px 1352px #767676, 1568px 304px #767676, 587px 1917px #767676, 269px 964px #767676, 1796px 1955px #767676, 798px 1513px #767676, 942px 615px #767676, 198px 860px #767676, 1473px 1891px #767676, 1519px 298px #767676, 100px 193px #767676, 721px 1199px #767676, 1395px 338px #767676, 25px 671px #767676, 75px 1685px #767676, 290px 214px #767676, 1185px 1821px #767676, 1312px 1188px #767676, 950px 2000px #767676, 1606px 1709px #767676, 931px 1565px #767676, 716px 382px #767676, 1117px 979px #767676, 1752px 1623px #767676, 1080px 766px #767676, 1145px 1667px #767676, 655px 278px #767676, 1679px 632px #767676, 1637px 1896px #767676, 490px 79px #767676, 1663px 266px #767676, 1392px 23px #767676, 718px 133px #767676, 350px 1808px #767676, 847px 1259px #767676, 1285px 271px #767676, 100px 661px #767676, 148px 1919px #767676, 997px 1803px #767676, 1137px 1362px #767676, 1094px 1280px #767676, 266px 645px #767676, 416px 914px #767676, 1994px 916px #767676, 581px 1984px #767676, 932px 296px #767676, 1651px 382px #767676, 615px 1703px #767676, 1144px 1925px #767676, 570px 29px #767676, 1561px 1744px #767676, 2px 1547px #767676, 561px 1310px #767676, 906px 683px #767676, 328px 1735px #767676, 1919px 1653px #767676, 327px 9px #767676, 735px 1315px #767676, 585px 444px #767676, 153px 724px #767676, 1724px 1871px #767676, 887px 410px #767676, 663px 1042px #767676, 251px 1924px #767676, 1663px 1258px #767676, 1413px 1126px #767676, 937px 876px #767676, 676px 1124px #767676, 1487px 1780px #767676, 1141px 1108px #767676, 513px 19px #767676, 1193px 1483px #767676, 1945px 1368px #767676, 1658px 218px #767676, 1858px 898px #767676, 1129px 1255px #767676, 1011px 1219px #767676, 1421px 1179px #767676, 114px 1124px #767676, 1407px 1753px #767676, 491px 1040px #767676, 1178px 1987px #767676, 1710px 1698px #767676, 1315px 1579px #767676, 48px 434px #767676, 1825px 879px #767676, 1381px 628px #767676, 1048px 1140px #767676, 1473px 718px #767676, 1420px 985px #767676, 902px 310px #767676, 1619px 324px #767676, 1083px 148px #767676, 1582px 1740px #767676, 1248px 1761px #767676, 1702px 1717px #767676, 627px 340px #767676, 1931px 1249px #767676, 1736px 627px #767676, 116px 1330px #767676, 96px 594px #767676, 1781px 1832px #767676, 1938px 1861px #767676, 1940px 1444px #767676, 266px 753px #767676, 91px 1090px #767676, 1393px 1746px #767676, 492px 178px #767676, 1556px 147px #767676, 1425px 1611px #767676, 282px 246px #767676, 500px 481px #767676, 515px 1947px #767676, 460px 1104px #767676, 931px 1472px #767676, 344px 226px #767676, 365px 107px #767676, 894px 1122px #767676, 1373px 1116px #767676, 507px 553px #767676, 966px 1895px #767676, 1587px 1357px #767676, 421px 652px #767676, 1893px 1500px #767676, 104px 1558px #767676, 456px 265px #767676, 1257px 1207px #767676, 1172px 906px #767676, 50px 1561px #767676, 1296px 30px #767676, 1098px 1529px #767676, 555px 723px #767676, 1458px 1919px #767676, 1146px 570px #767676, 1894px 973px #767676, 1777px 1570px #767676, 1917px 1004px #767676, 19px 927px #767676, 1882px 512px #767676, 1390px 1497px #767676, 99px 1521px #767676, 1796px 1847px #767676, 126px 1737px #767676, 600px 541px #767676, 1539px 391px #767676, 1689px 1531px #767676, 744px 92px #767676, 1000px 1339px #767676, 1697px 950px #767676, 1534px 745px #767676, 714px 272px #767676, 1931px 1036px #767676, 1063px 1547px #767676, 1790px 1484px #767676, 754px 612px #767676, 886px 878px #767676, 1588px 1882px #767676, 88px 1475px #767676, 920px 666px #767676, 1132px 1954px #767676, 825px 1000px #767676, 179px 1135px #767676, 919px 76px #767676, 1724px 1759px #767676, 1977px 1377px #767676, 1036px 1279px #767676, 1109px 658px #767676, 211px 188px #767676, 187px 180px #767676, 468px 1964px #767676, 1482px 244px #767676, 783px 772px #767676, 978px 431px #767676, 124px 388px #767676, 697px 1195px #767676, 404px 334px #767676, 1248px 572px #767676, 1888px 1144px #767676, 589px 132px #767676, 100px 425px #767676, 593px 648px #767676, 273px 643px #767676, 543px 1941px #767676, 427px 1843px #767676, 680px 293px #767676, 1495px 739px #767676, 526px 631px #767676, 1645px 567px #767676, 991px 949px #767676, 1027px 1570px #767676, 1335px 395px #767676, 1024px 1509px #767676, 1785px 250px #767676;
+      --stars-medium: 1120px 738px #767676, 533px 827px #767676, 339px 866px #767676, 1335px 1325px #767676, 1021px 435px #767676, 1850px 1972px #767676, 492px 1847px #767676, 1030px 1536px #767676, 1154px 1422px #767676, 533px 945px #767676, 1465px 1670px #767676, 411px 1474px #767676, 413px 526px #767676, 1155px 1946px #767676, 1469px 1277px #767676, 310px 1807px #767676, 936px 387px #767676, 397px 725px #767676, 228px 1790px #767676, 1124px 539px #767676, 1261px 63px #767676, 172px 881px #767676, 1042px 1984px #767676, 1153px 322px #767676, 1955px 662px #767676, 1951px 1981px #767676, 621px 248px #767676, 1589px 534px #767676, 1997px 667px #767676, 618px 660px #767676, 452px 259px #767676, 362px 1762px #767676, 735px 347px #767676, 783px 297px #767676, 1808px 408px #767676, 373px 740px #767676, 543px 1509px #767676, 1125px 1169px #767676, 1625px 483px #767676, 1461px 782px #767676, 460px 1210px #767676, 608px 1119px #767676, 132px 1503px #767676, 169px 660px #767676, 392px 1094px #767676, 1128px 567px #767676, 119px 1617px #767676, 1872px 60px #767676, 1192px 673px #767676, 1115px 1712px #767676, 1192px 873px #767676, 1375px 1486px #767676, 1031px 227px #767676, 510px 1459px #767676, 607px 1047px #767676, 752px 247px #767676, 1556px 135px #767676, 959px 915px #767676, 1071px 365px #767676, 318px 203px #767676, 1000px 573px #767676, 2000px 1250px #767676, 1566px 1478px #767676, 364px 1008px #767676, 1335px 1898px #767676, 580px 1162px #767676, 930px 1091px #767676, 1644px 1040px #767676, 1702px 1127px #767676, 1750px 1105px #767676, 708px 1310px #767676, 29px 392px #767676, 946px 1905px #767676, 407px 1326px #767676, 59px 927px #767676, 1717px 1944px #767676, 674px 301px #767676, 1018px 1346px #767676, 1376px 1697px #767676, 1402px 961px #767676, 1012px 1256px #767676, 999px 923px #767676, 1866px 1360px #767676, 1129px 533px #767676, 117px 797px #767676, 778px 855px #767676, 1809px 1485px #767676, 965px 1725px #767676, 780px 290px #767676, 205px 431px #767676, 1886px 1007px #767676, 163px 1912px #767676, 517px 1106px #767676, 527px 1428px #767676, 1258px 1921px #767676, 1544px 1149px #767676, 1829px 966px #767676, 1626px 1420px #767676, 402px 1275px #767676, 1952px 920px #767676, 738px 1364px #767676, 1598px 1288px #767676, 1461px 951px #767676, 1921px 782px #767676, 57px 943px #767676, 1123px 7px #767676, 763px 1524px #767676, 432px 847px #767676, 1479px 59px #767676, 1761px 258px #767676, 1410px 1609px #767676, 303px 58px #767676, 103px 1478px #767676, 1289px 221px #767676, 1265px 277px #767676, 1153px 1054px #767676, 1468px 314px #767676, 363px 453px #767676, 1946px 70px #767676, 1223px 876px #767676, 1780px 1010px #767676, 782px 1977px #767676, 1480px 1867px #767676, 451px 390px #767676, 1285px 321px #767676, 877px 1682px #767676, 1998px 365px #767676, 817px 1011px #767676, 926px 1147px #767676, 310px 368px #767676, 1234px 922px #767676, 658px 64px #767676, 1409px 200px #767676, 1200px 515px #767676, 1597px 1924px #767676, 1089px 1523px #767676, 1917px 995px #767676, 734px 1392px #767676, 1573px 174px #767676, 209px 1376px #767676, 1987px 1718px #767676, 1650px 796px #767676, 827px 1701px #767676, 1763px 961px #767676, 1387px 834px #767676, 1122px 1326px #767676, 7px 763px #767676, 666px 893px #767676, 1568px 947px #767676, 1460px 53px #767676, 618px 549px #767676, 527px 398px #767676, 1648px 1959px #767676, 1333px 956px #767676, 807px 695px #767676, 875px 147px #767676, 568px 1632px #767676, 986px 1215px #767676, 1057px 1737px #767676, 1352px 851px #767676, 1579px 853px #767676, 66px 1269px #767676, 1775px 1587px #767676, 703px 107px #767676, 393px 1303px #767676, 897px 1414px #767676, 812px 120px #767676, 1553px 1317px #767676, 1394px 606px #767676, 1504px 1659px #767676, 1007px 370px #767676, 964px 1028px #767676, 871px 1349px #767676, 803px 1218px #767676, 1851px 1273px #767676, 57px 432px #767676, 727px 1752px #767676, 1381px 998px #767676, 950px 412px #767676, 1118px 493px #767676, 549px 311px #767676, 1689px 983px #767676, 185px 1432px #767676, 425px 1761px #767676, 547px 291px #767676, 356px 1619px #767676, 516px 294px #767676, 458px 383px #767676, 1634px 1420px #767676, 1202px 1564px #767676, 1526px 821px #767676, 1401px 1242px #767676, 34px 1100px #767676, 1347px 1172px #767676, 854px 821px #767676, 1762px 467px #767676, 410px 1662px #767676, 1804px 19px #767676, 1997px 320px #767676, 1025px 1016px #767676;
+      --stars-large: 1783px 1852px #767676, 760px 523px #767676, 136px 446px #767676, 1618px 589px #767676, 769px 1696px #767676, 804px 1501px #767676, 1927px 1123px #767676, 46px 1079px #767676, 1682px 728px #767676, 1049px 479px #767676, 1427px 1116px #767676, 1951px 782px #767676, 1556px 827px #767676, 926px 382px #767676, 1851px 863px #767676, 1399px 1900px #767676, 634px 850px #767676, 1939px 1032px #767676, 1571px 1958px #767676, 1648px 1378px #767676, 33px 1171px #767676, 1848px 475px #767676, 1173px 1872px #767676, 1810px 409px #767676, 1957px 328px #767676, 1029px 45px #767676, 333px 584px #767676, 1998px 422px #767676, 480px 1216px #767676, 1432px 1888px #767676, 709px 606px #767676, 555px 1702px #767676, 58px 1863px #767676, 1839px 1633px #767676, 1349px 895px #767676, 1393px 1027px #767676, 799px 218px #767676, 923px 1581px #767676, 1277px 271px #767676, 142px 1086px #767676, 365px 41px #767676, 1135px 1148px #767676, 1101px 1518px #767676, 265px 1855px #767676, 1134px 167px #767676, 997px 770px #767676, 1172px 1332px #767676, 1573px 121px #767676, 1925px 853px #767676, 1951px 200px #767676, 777px 1093px #767676, 996px 278px #767676, 1328px 1296px #767676, 978px 535px #767676, 161px 288px #767676, 1466px 310px #767676, 638px 1368px #767676, 1407px 360px #767676, 704px 658px #767676, 1371px 1152px #767676, 1947px 1808px #767676, 1280px 1392px #767676, 51px 499px #767676, 1862px 1087px #767676, 563px 575px #767676, 165px 689px #767676, 1104px 708px #767676, 1279px 1339px #767676, 1561px 899px #767676, 1046px 49px #767676, 1916px 1992px #767676, 893px 1915px #767676, 1404px 1555px #767676, 1203px 330px #767676, 389px 1239px #767676, 69px 1152px #767676, 1566px 804px #767676, 341px 751px #767676, 1775px 724px #767676, 1281px 685px #767676, 244px 1397px #767676, 619px 1533px #767676, 169px 1812px #767676, 369px 1px #767676, 1705px 1430px #767676, 796px 1998px #767676, 1801px 534px #767676, 749px 1038px #767676, 429px 1533px #767676, 536px 1902px #767676, 261px 1700px #767676, 1630px 511px #767676, 863px 925px #767676, 435px 621px #767676, 221px 191px #767676, 734px 660px #767676, 1032px 1017px #767676, 832px 1594px #767676, 1757px 962px #767676, 652px 1291px #767676;
+      height: 100%;
+      left: 0;
+      overflow: hidden;
+      top: 0;
+      width: 100%;
+      z-index: -1
+    }
+
+    .stars>.small,
+    .stars>.small:after {
+      background: transparent;
+      box-shadow: var(--stars-small);
+      height: 1px;
+      width: 1px
+    }
+
+    .stars>.small:after {
+      content: " ";
+      position: absolute;
+      top: 2000px
+    }
+
+    .stars>.medium,
+    .stars>.medium:after {
+      background: transparent;
+      box-shadow: var(--stars-medium);
+      height: 2px;
+      width: 2px
+    }
+
+    .stars>.medium:after {
+      content: " ";
+      position: absolute;
+      top: 2000px
+    }
+
+    .stars>.big,
+    .stars>.big:after {
+      background: transparent;
+      border-radius: 100%;
+      box-shadow: var(--stars-large);
+      height: 3px;
+      width: 3px
+    }
+
+    .stars>.big:after {
+      content: " ";
+      position: absolute;
+      top: 2000px
+    }
+
+    .toc,
+    details {
+      cursor: pointer
+    }
+
+    .toc h6 {
+      display: inline-block;
+      margin: 0
+    }
+
+    .toc a {
+      font-family: var(--sans-serif);
+      text-decoration: underline;
+      -webkit-text-decoration-color: var(--gray4);
+      text-decoration-color: var(--gray4);
+      -webkit-transition: all .2s ease-out;
+      transition: all .2s ease-out
+    }
+
+    .toc a:hover {
+      color: var(--brand-light);
+      text-decoration: none
+    }
+
+    .toc li p {
+      margin: 0
+    }
+
+    .autolink-headers {
+      position: absolute;
+      left: -4px;
+      fill: var(--orange3)
+    }
+
+    .sticky-sentinel {
+      position: absolute;
+      left: 0;
+      right: 0
+    }
+
+    .sticky-sentinel--top {
+      height: 40px;
+      top: -24px
+    }
+
+    .sticky-sentinel--bottom {
+      height: 40px;
+      bottom: 0
+    }
+
+    @media (max-width:1262px) and (min-width:721px) {
+      body {
+        --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 52px), 0 100%);
+        --hero-height: 36.0rem
+      }
+
+      .article-reader {
+        grid-column-end: 3;
+        grid-column-start: 1;
+        width: 100%;
+        padding: 0 2.4rem 0 6.2rem;
+        box-sizing: border-box
+      }
+
+      .side-nav {
+        margin-right: -36rem;
+        margin-bottom: calc(-100vh + var(--nav-height));
+        pointer-events: none;
+        overflow: hidden
+      }
+
+      .side-nav:after {
+        content: "";
+        width: 392px;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-color: var(--gray0);
+        -webkit-transform: translateX(-120%);
+        transform: translateX(-120%);
+        -webkit-transition: -webkit-transform .28s;
+        transition: -webkit-transform .28s;
+        transition: transform .28s;
+        transition: transform .28s, -webkit-transform .28s;
+        pointer-events: none;
+        z-index: -1;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, .33), 2px 0 3px rgba(0, 0, 0, .2)
+      }
+
+      .side-nav__title {
+        padding-left: 2.4rem
+      }
+
+      .side-nav.side-nav--open {
+        pointer-events: all;
+        overflow-y: auto
+      }
+
+      .side-nav.side-nav--open:after {
+        -webkit-transform: none;
+        transform: none;
+        pointer-events: all
+      }
+
+      .side-nav__list {
+        -webkit-transform: translateX(-120%);
+        transform: translateX(-120%);
+        -webkit-transition: -webkit-transform .28s;
+        transition: -webkit-transform .28s;
+        transition: transform .28s;
+        transition: transform .28s, -webkit-transform .28s;
+        pointer-events: none
+      }
+
+      .side-nav.side-nav--open .side-nav__list {
+        -webkit-transform: none;
+        transform: none;
+        pointer-events: all
+      }
+
+      .hero h1 {
+        left: 20rem
+      }
+
+      .side-nav.side-nav--open .side-nav__open,
+      .side-nav__open {
+        top: 34px;
+        margin-top: 0;
+        display: block;
+        pointer-events: all
+      }
+    }
+
+    @media (max-width:720px) {
+      html {
+        font-size: 9px
+      }
+
+      body {
+        --nav-height: 5.2rem;
+        --hero-height: 92px;
+        --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 52px), 0 calc(100% - 32px))
+      }
+
+      .hero {
+        top: var(--nav-height)
+      }
+
+      .hero h1 {
+        display: none
+      }
+
+      .nav ul {
+        justify-content: center
+      }
+
+      .nav__logo {
+        height: 3.6rem
+      }
+
+      main {
+        display: flex;
+        flex-flow: column
+      }
+
+      .side-nav {
+        height: auto;
+        max-height: 42px;
+        margin-top: -92px;
+        overflow: hidden;
+        max-width: calc(100% - 4.8rem)
+      }
+
+      .side-nav:before {
+        width: 110%
+      }
+
+      .side-nav.side-nav--open {
+        max-height: 100%;
+        overflow: visible;
+        position: static
+      }
+
+      .side-nav.side-nav--open+.article-reader {
+        display: none
+      }
+
+      .side-nav>:last-child {
+        padding-bottom: 2.4rem
+      }
+
+      .side-nav:before {
+        height: 92px;
+        margin-bottom: -92px;
+        top: var(--nav-height)
+      }
+
+      .side-nav__open {
+        display: block
+      }
+
+      .side-nav__list:first-of-type {
+        margin-top: -52px
+      }
+
+      .side-nav__title {
+        padding-left: 3.2rem;
+        margin: 2.4rem 0 3.2rem;
+        top: calc(var(--nav-height) + 12px)
+      }
+
+      [data-browser=legacy] .side-nav__title {
+        background-position: 0 calc(-50vh + var(--magic-hero-number) - 32px)
+      }
+
+      .article-reader {
+        width: 100%;
+        padding: 0 1rem;
+        box-sizing: border-box
+      }
+
+      .article-reader__headline {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: auto;
+        overflow: visible;
+        clip: none;
+        border: auto;
+        line-height: 1.2;
+        margin: 4.2rem 0 0
+      }
+
+      .article-reader h1 {
+        font-size: 3.2rem
+      }
+
+      .article-reader h2 {
+        font-size: 2.8rem
+      }
+
+      .article-reader h3 {
+        font-size: 2.4rem
+      }
+
+      .article-reader h4 {
+        font-size: 2.2rem
+      }
+
+      .article-reader h5 {
+        font-size: 2rem
+      }
+
+      .article-reader h6 {
+        font-size: 1.8rem;
+        font-weight: 800
+      }
+
+      .sticky-sentinel--top {
+        top: -92px
+      }
+    }
+  </style>
+  <meta name="generator" content="Gatsby 2.18.11">
+  <title>Introdução ao Node.js</title>
+  <meta data-react-helmet="true" name="description"
+    content="Getting started guide to Node.js, the server-side JavaScript runtime environment. Node.js is built on top of the Google Chrome V8 JavaScript engine, and it's mainly used to create web servers - but it's not limited to just that.">
+  <meta data-react-helmet="true" property="og:type" content="website">
+  <meta data-react-helmet="true" property="og:title" content="Introdução ao Node.js">
+  <meta data-react-helmet="true" property="og:description"
+    content="Getting started guide to Node.js, the server-side JavaScript runtime environment. Node.js is built on top of the Google Chrome V8 JavaScript engine, and it's mainly used to create web servers - but it's not limited to just that.">
+  <meta data-react-helmet="true" property="og:url" content="https://nodejs.dev/">
+  <meta data-react-helmet="true" property="og:site_name" content="Introdução ao Node.js">
+  <meta data-react-helmet="true" property="article:section" content="Node.js">
+  <meta data-react-helmet="true" property="og:image:type" content="image/png">
+  <meta data-react-helmet="true" property="og:image:width" content="224">
+  <meta data-react-helmet="true" property="og:image:height" content="256">
+  <meta data-react-helmet="true" property="og:image" content="https://nodejs.org/static/images/logo-hexagon-card.png">
+  <meta data-react-helmet="true" property="og:image:secure_url"
+    content="https://nodejs.org/static/images/logo-hexagon-card.png">
+  <meta data-react-helmet="true" property="article:author" content="https://www.facebook.com/nodejsfoundation/">
+  <meta data-react-helmet="true" property="article:publisher" content="https://www.facebook.com/nodejsfoundation/">
+  <meta data-react-helmet="true" name="twitter:url" content="https://nodejs.dev/">
+  <meta data-react-helmet="true" name="twitter:creator" content="@nodejs">
+  <meta data-react-helmet="true" name="twitter:site" content="@nodejs">
+  <meta data-react-helmet="true" name="twitter:title" content="Introdução ao Node.js">
+  <meta data-react-helmet="true" name="twitter:card" content="summary">
+  <meta data-react-helmet="true" name="twitter:image" content="https://nodejs.org/static/images/logo-hexagon-card.png">
+  <meta data-react-helmet="true" name="twitter:image:alt" content="The Node.js Hexagon Logo">
+  <meta data-react-helmet="true" name="twitter:description"
+    content="Getting started guide to Node.js, the server-side JavaScript runtime environment. Node.js is built on top of the Google Chrome V8 JavaScript engine, and it's mainly used to create web servers - but it's not limited to just that.">
+  <link rel="canonical" href="https://nodejs.dev/" data-baseprotocol="https:" data-basehost="nodejs.dev">
+  <link rel="shortcut icon" href="https://nodejs.dev/icons/icon-48x48.png?v=c4ae6cc0f0baa07df6ce6c3f83e5c431">
+  <link rel="manifest" href="https://nodejs.dev/manifest.webmanifest">
+  <meta name="theme-color" content="#6cc24a">
+  <link rel="apple-touch-icon" sizes="48x48"
+    href="https://nodejs.dev/icons/icon-48x48.png?v=c4ae6cc0f0baa07df6ce6c3f83e5c431">
+  <link rel="apple-touch-icon" sizes="72x72"
+    href="https://nodejs.dev/icons/icon-72x72.png?v=c4ae6cc0f0baa07df6ce6c3f83e5c431">
+  <link rel="apple-touch-icon" sizes="96x96"
+    href="https://nodejs.dev/icons/icon-96x96.png?v=c4ae6cc0f0baa07df6ce6c3f83e5c431">
+  <link rel="apple-touch-icon" sizes="144x144"
+    href="https://nodejs.dev/icons/icon-144x144.png?v=c4ae6cc0f0baa07df6ce6c3f83e5c431">
+  <link rel="apple-touch-icon" sizes="192x192"
+    href="https://nodejs.dev/icons/icon-192x192.png?v=c4ae6cc0f0baa07df6ce6c3f83e5c431">
+  <link rel="apple-touch-icon" sizes="256x256"
+    href="https://nodejs.dev/icons/icon-256x256.png?v=c4ae6cc0f0baa07df6ce6c3f83e5c431">
+  <link rel="apple-touch-icon" sizes="384x384"
+    href="https://nodejs.dev/icons/icon-384x384.png?v=c4ae6cc0f0baa07df6ce6c3f83e5c431">
+  <link rel="apple-touch-icon" sizes="512x512"
+    href="https://nodejs.dev/icons/icon-512x512.png?v=c4ae6cc0f0baa07df6ce6c3f83e5c431">
+  <style type="text/css">
+    .autolink-headers {
+      float: left;
+      padding-right: 4px;
+      margin-left: -20px;
+    }
+
+    h1 .autolink-headers svg,
+    h2 .autolink-headers svg,
+    h3 .autolink-headers svg,
+    h4 .autolink-headers svg,
+    h5 .autolink-headers svg,
+    h6 .autolink-headers svg {
+      visibility: hidden;
+    }
+
+    h1:hover .autolink-headers svg,
+    h2:hover .autolink-headers svg,
+    h3:hover .autolink-headers svg,
+    h4:hover .autolink-headers svg,
+    h5:hover .autolink-headers svg,
+    h6:hover .autolink-headers svg,
+    h1 .autolink-headers:focus svg,
+    h2 .autolink-headers:focus svg,
+    h3 .autolink-headers:focus svg,
+    h4 .autolink-headers:focus svg,
+    h5 .autolink-headers:focus svg,
+    h6 .autolink-headers:focus svg {
+      visibility: visible;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var offset = element.offsetTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function () {
+            window.scrollTo(0, offset - 125)
+          }), 0)
+        }
+      }
+    })
+  </script>
+  <style type="text/css">
+    .gatsby-resp-image-image {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      vertical-align: middle;
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: transparent;
+    }
+  </style>
+  <link rel="sitemap" type="application/xml" href="https://nodejs.dev/sitemap.xml">
+  <link as="script" rel="preload" href="Introduction%20to%20Node.js_arquivos/styles-6f952230aceed5b9dd96.js">
+  <link as="script" rel="preload"
+    href="Introduction%20to%20Node.js_arquivos/component---src-templates-learn-tsx-9e21782b75ce6239a909.js">
+  <link as="script" rel="preload" href="Introduction%20to%20Node.js_arquivos/commons-43e99b6548dfc6cd919a.js">
+  <link as="script" rel="preload" href="Introduction%20to%20Node.js_arquivos/app-e8f5064dbbd859df9b62.js">
+  <link as="script" rel="preload" href="Introduction%20to%20Node.js_arquivos/webpack-runtime-2a31b97e25ce0f845d50.js">
+  <link as="fetch" rel="preload" href="https://nodejs.dev/page-data/index/page-data.json" crossorigin="anonymous">
+  <style data-emotion-css="1u79wng">
+    .css-1u79wng {
+      margin: 0 auto;
+      padding: 0 4.8rem;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      list-style: none;
+    }
+
+    @media (max-width:380px) {
+      .css-1u79wng {
+        padding: 0;
+      }
+    }
+  </style>
+  <style data-emotion-css="2lvb1x">
+    .css-2lvb1x {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin: 5rem 0 2.5rem;
+      -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      color: var(--gray7);
+      text-transform: uppercase;
+      padding-left: 0;
+    }
+
+    .css-2lvb1x li:first-child a {
+      margin-left: 0 !important;
+    }
+
+    .css-2lvb1x h5 {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      width: 100%;
+      margin: 0.5rem 0.5rem 0.5rem 0;
+      font-weight: normal;
+      font-size: 1.4rem;
+    }
+  </style>
+  <style data-emotion-css="o9b79t">
+    .css-o9b79t {
+      list-style: none;
+    }
+  </style>
+  <style data-emotion-css="1sipr6q">
+    .css-1sipr6q {
+      margin-left: 0.5rem;
+    }
+
+    .css-1sipr6q:hover img {
+      -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  </style>
+  <style data-emotion-css="13co0gt">
+    .css-13co0gt {
+      height: 30px;
+      width: 30px;
+      margin-top: 5px;
+      border-radius: 100%;
+      border: 1px solid var(--brand-light);
+      -webkit-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+    }
+  </style>
+  <style data-emotion-css="2imjyh">
+    .css-2imjyh {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+    }
+  </style>
+  <style data-emotion-css="1gz0srz">
+    .css-1gz0srz {
+      color: var(--gray7) !important;
+      text-transform: uppercase;
+      -webkit-text-decoration: none !important;
+      text-decoration: none !important;
+      font-size: 1.4rem;
+      font-weight: normal;
+      font-family: var(--sans-serif);
+      vertical-align: middle;
+    }
+
+    .css-1gz0srz span {
+      vertical-align: middle;
+      font-weight: normal;
+    }
+
+    .css-1gz0srz:hover {
+      color: var(--brand-light) !important;
+    }
+  </style>
+  <style data-emotion-css="1kbww1n">
+    .css-1kbww1n {
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+  </style>
+  <style data-emotion-css="1hngnb6">
+    .css-1hngnb6 {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      list-style: none;
+      padding: 5rem 0;
+    }
+  </style>
+  <style data-emotion-css="awdy0f">
+    .css-awdy0f {
+      color: var(--gray7) !important;
+      text-transform: uppercase;
+      -webkit-text-decoration: none !important;
+      text-decoration: none !important;
+      font-size: 1.4rem;
+      font-weight: normal;
+      font-family: var(--sans-serif);
+      vertical-align: middle;
+    }
+
+    .css-awdy0f:hover {
+      color: var(--brand-light) !important;
+    }
+  </style>
+  <link rel="prefetch" href="https://nodejs.dev/page-data/introduction-to-nodejs/page-data.json" crossorigin="anonymous"
+    as="fetch">
+  <link rel="prefetch" href="https://nodejs.dev/page-data/how-to-install-nodejs/page-data.json" crossorigin="anonymous"
+    as="fetch">
+  <link rel="prefetch" href="https://nodejs.dev/page-data/a-brief-history-of-nodejs/page-data.json"
+    crossorigin="anonymous" as="fetch">
+  <link rel="prefetch"
+    href="https://nodejs.dev/page-data/how-much-javascript-do-you-need-to-know-to-use-nodejs/page-data.json"
+    crossorigin="anonymous" as="fetch">
+  <link rel="prefetch"
+    href="Introduction%20to%20Node.js_arquivos/component---src-templates-learn-tsx-9e21782b75ce6239a909.js">
+  <link rel="prefetch"
+    href="Introduction%20to%20Node.js_arquivos/component---src-templates-learn-tsx-9e21782b75ce6239a909.js">
+  <link rel="prefetch"
+    href="Introduction%20to%20Node.js_arquivos/component---src-templates-learn-tsx-9e21782b75ce6239a909.js">
+  <link rel="prefetch"
+    href="Introduction%20to%20Node.js_arquivos/component---src-templates-learn-tsx-9e21782b75ce6239a909.js">
+  <link rel="prefetch" href="https://nodejs.dev/page-data/differences-between-nodejs-and-the-browser/page-data.json"
+    crossorigin="anonymous" as="fetch">
+  <link rel="prefetch" href="https://nodejs.dev/page-data/the-v8-javascript-engine/page-data.json"
+    crossorigin="anonymous" as="fetch">
+  <link rel="prefetch" href="https://nodejs.dev/page-data/run-nodejs-scripts-from-the-command-line/page-data.json"
+    crossorigin="anonymous" as="fetch">
+</head>
+
+<body data-gr-c-s-loaded="true">
+  <div id="___gatsby">
+    <div style="outline:none" tabindex="-1" role="group" id="gatsby-focus-wrapper">
+      <nav class="nav">
+        <ul class="css-1u79wng">
+          <li><a aria-current="page" style="display:block" class="" href="https://nodejs.dev/"><img
+                src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4wLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCA0NDIuNCAyNzAuOSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDQyLjQgMjcwLjk7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+DQoJLnN0MHtmaWxsOiM1RkEwNEQ7fQ0KCS5zdDF7ZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojMkUzMzM5O30NCgkuc3Qye2ZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO2ZpbGw6IzVGQTA0RDt9DQoJLnN0M3tjbGlwLXBhdGg6dXJsKCNYTUxJRF8zXyk7fQ0KCS5zdDR7ZmlsbDpub25lO30NCgkuc3Q1e2ZpbGw6dXJsKCNTVkdJRF8xXyk7fQ0KCS5zdDZ7ZmlsbDp1cmwoI1NWR0lEXzJfKTt9DQoJLnN0N3tmaWxsOnVybCgjU1ZHSURfM18pO30NCgkuc3Q4e2ZpbGw6dXJsKCNTVkdJRF80Xyk7fQ0KCS5zdDl7ZmlsbDp1cmwoI1NWR0lEXzVfKTt9DQoJLnN0MTB7ZmlsbDp1cmwoI1NWR0lEXzZfKTt9DQo8L3N0eWxlPg0KPGc+DQoJPHBhdGggY2xhc3M9InN0MCIgZD0iTTIxOC42LDI3MC45Yy0xLjUsMC0yLjktMC40LTQuMi0xLjFsLTEzLjMtNy45Yy0yLTEuMS0xLTEuNS0wLjQtMS43YzIuNy0wLjksMy4yLTEuMSw2LTIuNw0KCQljMC4zLTAuMiwwLjctMC4xLDEsMC4xbDEwLjIsNi4xYzAuNCwwLjIsMC45LDAuMiwxLjIsMGwzOS45LTIzLjFjMC40LTAuMiwwLjYtMC42LDAuNi0xLjF2LTQ2LjFjMC0wLjUtMC4yLTAuOS0wLjYtMS4xbC0zOS45LTIzDQoJCWMtMC40LTAuMi0wLjktMC4yLTEuMiwwbC0zOS45LDIzYy0wLjQsMC4yLTAuNiwwLjctMC42LDEuMXY0Ni4xYzAsMC40LDAuMiwwLjksMC42LDEuMWwxMC45LDYuM2M1LjksMyw5LjYtMC41LDkuNi00di00NS41DQoJCWMwLTAuNiwwLjUtMS4yLDEuMi0xLjJoNS4xYzAuNiwwLDEuMiwwLjUsMS4yLDEuMnY0NS41YzAsNy45LTQuMywxMi41LTExLjgsMTIuNWMtMi4zLDAtNC4xLDAtOS4yLTIuNWwtMTAuNS02DQoJCWMtMi42LTEuNS00LjItNC4zLTQuMi03LjN2LTQ2LjFjMC0zLDEuNi01LjgsNC4yLTcuM2wzOS45LTIzLjFjMi41LTEuNCw1LjktMS40LDguNCwwbDM5LjksMjMuMWMyLjYsMS41LDQuMiw0LjMsNC4yLDcuM3Y0Ni4xDQoJCWMwLDMtMS42LDUuOC00LjIsNy4zbC0zOS45LDIzLjFDMjIxLjYsMjcwLjUsMjIwLjEsMjcwLjksMjE4LjYsMjcwLjl6Ii8+DQoJPHBhdGggY2xhc3M9InN0MCIgZD0iTTIzMSwyMzkuMmMtMTcuNSwwLTIxLjEtOC0yMS4xLTE0LjhjMC0wLjYsMC41LTEuMiwxLjItMS4yaDUuMmMwLjYsMCwxLjEsMC40LDEuMSwxYzAuOCw1LjMsMy4xLDcuOSwxMy43LDcuOQ0KCQljOC40LDAsMTItMS45LDEyLTYuNGMwLTIuNi0xLTQuNS0xNC4xLTUuOGMtMTAuOS0xLjEtMTcuNy0zLjUtMTcuNy0xMi4yYzAtOC4xLDYuOC0xMi45LDE4LjItMTIuOWMxMi44LDAsMTkuMSw0LjQsMTkuOSwxNA0KCQljMCwwLjMtMC4xLDAuNi0wLjMsMC45Yy0wLjIsMC4yLTAuNSwwLjQtMC44LDAuNEgyNDNjLTAuNSwwLTEtMC40LTEuMS0wLjljLTEuMi01LjUtNC4zLTcuMy0xMi41LTcuM2MtOS4yLDAtMTAuMywzLjItMTAuMyw1LjYNCgkJYzAsMi45LDEuMywzLjgsMTMuNyw1LjRjMTIuMywxLjYsMTguMSwzLjksMTguMSwxMi41QzI1MC45LDIzNC4yLDI0My42LDIzOS4yLDIzMSwyMzkuMnoiLz4NCjwvZz4NCjxnPg0KCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yODguNiwxOTAuOGMwLDQuMi0zLjUsNy43LTcuNyw3LjdjLTQuMiwwLTcuNy0zLjQtNy43LTcuN2MwLTQuNCwzLjYtNy43LDcuNy03LjcNCgkJQzI4NSwxODMuMSwyODguNiwxODYuNSwyODguNiwxOTAuOHogTTI3NC40LDE5MC44YzAsMy42LDIuOSw2LjUsNi40LDYuNWMzLjYsMCw2LjUtMyw2LjUtNi41YzAtMy42LTIuOS02LjQtNi41LTYuNA0KCQlDMjc3LjQsMTg0LjQsMjc0LjQsMTg3LjIsMjc0LjQsMTkwLjh6IE0yNzgsMTg2LjVoM2MxLDAsMywwLDMsMi4zYzAsMS42LTEsMS45LTEuNiwyLjFjMS4yLDAuMSwxLjMsMC45LDEuNCwyDQoJCWMwLjEsMC43LDAuMiwxLjksMC40LDIuM2gtMS44YzAtMC40LTAuMy0yLjYtMC4zLTIuN2MtMC4xLTAuNS0wLjMtMC43LTAuOS0wLjdoLTEuNXYzLjVIMjc4VjE4Ni41eiBNMjc5LjYsMTkwLjNoMS4zDQoJCWMxLjEsMCwxLjMtMC44LDEuMy0xLjJjMC0xLjItMC44LTEuMi0xLjMtMS4yaC0xLjRWMTkwLjN6Ii8+DQo8L2c+DQo8cGF0aCBjbGFzcz0ic3QxIiBkPSJNOTQuOSw5MC42YzAtMS44LTEtMy41LTIuNi00LjRMNTAsNjEuN2MtMC43LTAuNC0xLjUtMC42LTIuMy0wLjdjLTAuMSwwLTAuNCwwLTAuNCwwYy0wLjgsMC0xLjYsMC4zLTIuMywwLjcNCglMMi42LDg2LjFDMSw4NywwLDg4LjcsMCw5MC42bDAuMSw2NS42YzAsMC45LDAuNSwxLjgsMS4zLDIuMmMwLjgsMC41LDEuOCwwLjUsMi41LDBMMjkuMSwxNDRjMS42LTAuOSwyLjYtMi42LDIuNi00LjR2LTMwLjcNCgljMC0xLjgsMS0zLjUsMi42LTQuNGwxMC43LTYuMmMwLjgtMC41LDEuNy0wLjcsMi42LTAuN2MwLjksMCwxLjgsMC4yLDIuNSwwLjdsMTAuNyw2LjJjMS42LDAuOSwyLjYsMi42LDIuNiw0LjR2MzAuNw0KCWMwLDEuOCwxLDMuNSwyLjYsNC40TDkxLDE1OC40YzAuOCwwLjUsMS44LDAuNSwyLjYsMGMwLjgtMC40LDEuMy0xLjMsMS4zLTIuMkw5NC45LDkwLjZ6Ii8+DQo8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMjk4LjcsMC4zYy0wLjgtMC40LTEuOC0wLjQtMi41LDBjLTAuOCwwLjUtMS4zLDEuMy0xLjMsMi4ydjY1YzAsMC42LTAuMywxLjItMC45LDEuNmMtMC42LDAuMy0xLjIsMC4zLTEuOCwwDQoJTDI4MS42LDYzYy0xLjYtMC45LTMuNS0wLjktNS4xLDBsLTQyLjQsMjQuNWMtMS42LDAuOS0yLjYsMi42LTIuNiw0LjR2NDguOWMwLDEuOCwxLDMuNSwyLjYsNC40bDQyLjQsMjQuNWMxLjYsMC45LDMuNSwwLjksNS4xLDANCglsNDIuNC0yNC41YzEuNi0wLjksMi42LTIuNiwyLjYtNC40VjE4LjljMC0xLjktMS0zLjYtMi42LTQuNUwyOTguNywwLjN6IE0yOTQuOCwxMjQuN2MwLDAuNS0wLjIsMC45LTAuNiwxLjFsLTE0LjUsOC40DQoJYy0wLjQsMC4yLTAuOSwwLjItMS4zLDBsLTE0LjUtOC40Yy0wLjQtMC4yLTAuNi0wLjctMC42LTEuMXYtMTYuOGMwLTAuNSwwLjItMC45LDAuNi0xLjFsMTQuNS04LjRjMC40LTAuMiwwLjktMC4yLDEuMywwbDE0LjUsOC40DQoJYzAuNCwwLjIsMC42LDAuNywwLjYsMS4xVjEyNC43eiIvPg0KPGc+DQoJPHBhdGggY2xhc3M9InN0MSIgZD0iTTQzOS44LDEwNy41YzEuNi0wLjksMi41LTIuNiwyLjUtNC40VjkxLjJjMC0xLjgtMS0zLjUtMi41LTQuNGwtNDIuMS0yNC40Yy0xLjYtMC45LTMuNS0wLjktNS4xLDBsLTQyLjQsMjQuNQ0KCQljLTEuNiwwLjktMi42LDIuNi0yLjYsNC40djQ4LjljMCwxLjgsMSwzLjUsMi42LDQuNGw0Mi4xLDI0YzEuNiwwLjksMy41LDAuOSw1LDBsMjUuNS0xNC4yYzAuOC0wLjQsMS4zLTEuMywxLjMtMi4yDQoJCWMwLTAuOS0wLjUtMS44LTEuMy0yLjJsLTQyLjYtMjQuNWMtMC44LTAuNS0xLjMtMS4zLTEuMy0yLjJWMTA4YzAtMC45LDAuNS0xLjgsMS4zLTIuMmwxMy4zLTcuNmMwLjgtMC41LDEuOC0wLjUsMi42LDBsMTMuMyw3LjYNCgkJYzAuOCwwLjUsMS4zLDEuMywxLjMsMi4yVjEyMGMwLDAuOSwwLjUsMS44LDEuMywyLjJjMC44LDAuNSwxLjgsMC41LDIuNiwwTDQzOS44LDEwNy41eiIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0zOTQuNSwxMDUuMmMwLjMtMC4yLDAuNy0wLjIsMSwwbDguMSw0LjdjMC4zLDAuMiwwLjUsMC41LDAuNSwwLjl2OS40YzAsMC40LTAuMiwwLjctMC41LDAuOWwtOC4xLDQuNw0KCQljLTAuMywwLjItMC43LDAuMi0xLDBsLTguMS00LjdjLTAuMy0wLjItMC41LTAuNS0wLjUtMC45di05LjRjMC0wLjQsMC4yLTAuNywwLjUtMC45TDM5NC41LDEwNS4yeiIvPg0KPC9nPg0KPGc+DQoJPGRlZnM+DQoJCTxwYXRoIGlkPSJYTUxJRF8xNDNfIiBkPSJNMTY1LjgsNjIuNmMtMS42LTAuOS0zLjUtMC45LTUuMSwwbC00Mi4xLDI0LjNjLTEuNiwwLjktMi41LDIuNi0yLjUsNC40VjE0MGMwLDEuOCwxLDMuNSwyLjUsNC40DQoJCQlsNDIuMSwyNC4zYzEuNiwwLjksMy41LDAuOSw1LjEsMGw0Mi4xLTI0LjNjMS42LTAuOSwyLjUtMi42LDIuNS00LjRWOTEuM2MwLTEuOC0xLTMuNS0yLjUtNC40TDE2NS44LDYyLjZ6Ii8+DQoJPC9kZWZzPg0KCTxsaW5lYXJHcmFkaWVudCBpZD0iWE1MSURfMl8iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMTgwLjM5NTkiIHkxPSI4MC42OTc2IiB4Mj0iMTQyLjMzMSIgeTI9IjE1OC4zNSI+DQoJCTxzdG9wICBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiM0MjgxM0IiLz4NCgkJPHN0b3AgIG9mZnNldD0iMC4yNjQ5IiBzdHlsZT0ic3RvcC1jb2xvcjojNDU4NTNEIi8+DQoJCTxzdG9wICBvZmZzZXQ9IjAuNTExOSIgc3R5bGU9InN0b3AtY29sb3I6IzUwOTA0MyIvPg0KCQk8c3RvcCAgb2Zmc2V0PSIwLjc1MTgiIHN0eWxlPSJzdG9wLWNvbG9yOiM2MkEzNEUiLz4NCgkJPHN0b3AgIG9mZnNldD0iMC45ODYiIHN0eWxlPSJzdG9wLWNvbG9yOiM3QUJENUQiLz4NCgkJPHN0b3AgIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6IzdDQkY1RSIvPg0KCTwvbGluZWFyR3JhZGllbnQ+DQoJPHVzZSB4bGluazpocmVmPSIjWE1MSURfMTQzXyIgIHN0eWxlPSJvdmVyZmxvdzp2aXNpYmxlO2ZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO2ZpbGw6dXJsKCNYTUxJRF8yXyk7Ii8+DQoJPGNsaXBQYXRoIGlkPSJYTUxJRF8zXyI+DQoJCTx1c2UgeGxpbms6aHJlZj0iI1hNTElEXzE0M18iICBzdHlsZT0ib3ZlcmZsb3c6dmlzaWJsZTsiLz4NCgk8L2NsaXBQYXRoPg0KCTxnIGNsYXNzPSJzdDMiPg0KCQk8cGF0aCBjbGFzcz0ic3Q0IiBkPSJNMTYwLjYsNjIuNmwtNDIuMSwyNC4zYy0xLjYsMC45LTIuNiwyLjYtMi42LDQuNFYxNDBjMCwxLjIsMC40LDIuMywxLjIsMy4ybDQ3LjQtODEuMg0KCQkJQzE2My4yLDYxLjcsMTYxLjgsNjEuOSwxNjAuNiw2Mi42eiIvPg0KCQk8cGF0aCBjbGFzcz0ic3Q0IiBkPSJNMTY0LjcsMTY5LjJjMC40LTAuMSwwLjgtMC4zLDEuMi0wLjVsNDIuMy0yNC4zYzEuNi0wLjksMi44LTIuNiwyLjgtNC40VjkxLjNjMC0xLjMtMC44LTIuNi0xLjctMy41DQoJCQlMMTY0LjcsMTY5LjJ6Ii8+DQoJCTxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfMV8iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMTU2Ljg1MTkiIHkxPSIxMjEuMzM2NSIgeDI9IjI2My42NTkxIiB5Mj0iNDIuNDIxNiI+DQoJCQk8c3RvcCAgb2Zmc2V0PSI2LjQ5MTI4OGUtMDIiIHN0eWxlPSJzdG9wLWNvbG9yOiM0MjgxM0IiLz4NCgkJCTxzdG9wICBvZmZzZXQ9IjAuMjQxNCIgc3R5bGU9InN0b3AtY29sb3I6IzU2OTc0NyIvPg0KCQkJPHN0b3AgIG9mZnNldD0iMC40NzkiIHN0eWxlPSJzdG9wLWNvbG9yOiM2QkFENTQiLz4NCgkJCTxzdG9wICBvZmZzZXQ9IjAuNzA1OCIgc3R5bGU9InN0b3AtY29sb3I6Izc4QkE1QiIvPg0KCQkJPHN0b3AgIG9mZnNldD0iMC45MDgxIiBzdHlsZT0ic3RvcC1jb2xvcjojN0NCRjVFIi8+DQoJCTwvbGluZWFyR3JhZGllbnQ+DQoJCTxwYXRoIGNsYXNzPSJzdDUiIGQ9Ik0yMDgsODYuOWwtNDIuMy0yNC4zYy0wLjQtMC4yLTAuOS0wLjQtMS4zLTAuNUwxMTcsMTQzLjJjMC40LDAuNSwwLjksMC45LDEuNCwxLjJsNDIuMywyNC4zDQoJCQljMS4yLDAuNywyLjYsMC45LDMuOSwwLjVsNDQuNS04MS40QzIwOC44LDg3LjQsMjA4LjQsODcuMSwyMDgsODYuOXoiLz4NCgk8L2c+DQoJPGcgY2xhc3M9InN0MyI+DQoJCTxwYXRoIGNsYXNzPSJzdDQiIGQ9Ik0yMTEsMTQwVjkxLjNjMC0xLjgtMS4zLTMuNS0yLjgtNC40bC00Mi4zLTI0LjNjLTAuNS0wLjMtMS0wLjUtMS42LTAuNmw0Ni41LDc5LjENCgkJCUMyMTAuOCwxNDAuOCwyMTEsMTQwLjQsMjExLDE0MHoiLz4NCgkJPHBhdGggY2xhc3M9InN0NCIgZD0iTTExOC42LDg2LjljLTEuNiwwLjktMi42LDIuNi0yLjYsNC40VjE0MGMwLDEuOCwxLDMuNSwyLjYsNC40bDQyLjIsMjQuM2MxLDAuNiwyLjEsMC44LDMuMiwwLjZsLTQ1LjMtODIuNg0KCQkJTDExOC42LDg2Ljl6Ii8+DQoJCTxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfMl8iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMTE0LjU1NjUiIHkxPSI1My44MTc0IiB4Mj0iMjExLjk3MzUiIHkyPSI1My44MTc0Ij4NCgkJCTxzdG9wICBvZmZzZXQ9IjkuMTkxNjQ2ZS0wMiIgc3R5bGU9InN0b3AtY29sb3I6IzZDQzA0QSIvPg0KCQkJPHN0b3AgIG9mZnNldD0iMC4yODY0IiBzdHlsZT0ic3RvcC1jb2xvcjojNjZCODQ4Ii8+DQoJCQk8c3RvcCAgb2Zmc2V0PSIwLjU5NjgiIHN0eWxlPSJzdG9wLWNvbG9yOiM1NEEwNDQiLz4NCgkJCTxzdG9wICBvZmZzZXQ9IjAuODYyNCIgc3R5bGU9InN0b3AtY29sb3I6IzQxODczRiIvPg0KCQk8L2xpbmVhckdyYWRpZW50Pg0KCQk8cG9seWdvbiBjbGFzcz0ic3Q2IiBwb2ludHM9IjE1OS4zLDUzLjcgMTU4LjcsNTQgMTU5LjUsNTQgCQkiLz4NCgkJPGxpbmVhckdyYWRpZW50IGlkPSJTVkdJRF8zXyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIxMTQuNTU2NSIgeTE9IjExNS42MzQ2IiB4Mj0iMjExLjk3MzUiIHkyPSIxMTUuNjM0NiI+DQoJCQk8c3RvcCAgb2Zmc2V0PSI5LjE5MTY0NmUtMDIiIHN0eWxlPSJzdG9wLWNvbG9yOiM3Q0JGNUUiLz4NCgkJCTxzdG9wICBvZmZzZXQ9IjAuMjcyNCIgc3R5bGU9InN0b3AtY29sb3I6Izc3QkE1QiIvPg0KCQkJPHN0b3AgIG9mZnNldD0iMC40ODc1IiBzdHlsZT0ic3RvcC1jb2xvcjojNkFBQjUzIi8+DQoJCQk8c3RvcCAgb2Zmc2V0PSIwLjcxOTMiIHN0eWxlPSJzdG9wLWNvbG9yOiM1Mzk0NDUiLz4NCgkJCTxzdG9wICBvZmZzZXQ9IjAuODYyNCIgc3R5bGU9InN0b3AtY29sb3I6IzQyODEzQiIvPg0KCQk8L2xpbmVhckdyYWRpZW50Pg0KCQk8cGF0aCBjbGFzcz0ic3Q3IiBkPSJNMjA4LDE0NC40YzEuMi0wLjcsMi4xLTEuOSwyLjUtMy4yTDE2NC4yLDYyYy0xLjItMC4yLTIuNS0wLjEtMy42LDAuNmwtNDIsMjQuMmw0NS4zLDgyLjYNCgkJCWMwLjYtMC4xLDEuMy0wLjMsMS45LTAuNkwyMDgsMTQ0LjR6Ii8+DQoJCTxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfNF8iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMTE0LjU1NjUiIHkxPSIxNDMuNDQ1MiIgeDI9IjIxMS45NzM1IiB5Mj0iMTQzLjQ0NTIiPg0KCQkJPHN0b3AgIG9mZnNldD0iOS4xOTE2NDZlLTAyIiBzdHlsZT0ic3RvcC1jb2xvcjojNkNDMDRBIi8+DQoJCQk8c3RvcCAgb2Zmc2V0PSIwLjI4NjQiIHN0eWxlPSJzdG9wLWNvbG9yOiM2NkI4NDgiLz4NCgkJCTxzdG9wICBvZmZzZXQ9IjAuNTk2OCIgc3R5bGU9InN0b3AtY29sb3I6IzU0QTA0NCIvPg0KCQkJPHN0b3AgIG9mZnNldD0iMC44NjI0IiBzdHlsZT0ic3RvcC1jb2xvcjojNDE4NzNGIi8+DQoJCTwvbGluZWFyR3JhZGllbnQ+DQoJCTxwb2x5Z29uIGNsYXNzPSJzdDgiIHBvaW50cz0iMjEyLDE0My42IDIxMS43LDE0My4xIDIxMS43LDE0My44IAkJIi8+DQoJCTxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfNV8iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMTE0LjIzODEiIHkxPSIxNTYuMDE0OCIgeDI9IjIxMi4yODIzIiB5Mj0iMTU2LjAxNDgiPg0KCQkJPHN0b3AgIG9mZnNldD0iOS4xOTE2NDZlLTAyIiBzdHlsZT0ic3RvcC1jb2xvcjojNkNDMDRBIi8+DQoJCQk8c3RvcCAgb2Zmc2V0PSIwLjI4NjQiIHN0eWxlPSJzdG9wLWNvbG9yOiM2NkI4NDgiLz4NCgkJCTxzdG9wICBvZmZzZXQ9IjAuNTk2OCIgc3R5bGU9InN0b3AtY29sb3I6IzU0QTA0NCIvPg0KCQkJPHN0b3AgIG9mZnNldD0iMC44NjI0IiBzdHlsZT0ic3RvcC1jb2xvcjojNDE4NzNGIi8+DQoJCTwvbGluZWFyR3JhZGllbnQ+DQoJCTxwYXRoIGNsYXNzPSJzdDkiIGQ9Ik0yMDgsMTQ0LjRsLTQyLjIsMjQuM2MtMC42LDAuMy0xLjIsMC41LTEuOSwwLjZsMSwxLjVsNDctMjcuMXYtMC42bC0xLjMtMg0KCQkJQzIxMC4zLDE0Mi41LDIwOS4zLDE0My43LDIwOCwxNDQuNHoiLz4NCgkJPGxpbmVhckdyYWRpZW50IGlkPSJTVkdJRF82XyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIyMjYuMzE5NSIgeTE9Ijc4LjM5NTQiIHgyPSIxNjYuMjM4OSIgeTI9IjIwMC45NTk4Ij4NCgkJCTxzdG9wICBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiM0MTg3M0YiLz4NCgkJCTxzdG9wICBvZmZzZXQ9IjAuMzI4OCIgc3R5bGU9InN0b3AtY29sb3I6IzQxOEIzRCIvPg0KCQkJPHN0b3AgIG9mZnNldD0iMC42MzUyIiBzdHlsZT0ic3RvcC1jb2xvcjojNDE5NjM3Ii8+DQoJCQk8c3RvcCAgb2Zmc2V0PSIwLjkzMTkiIHN0eWxlPSJzdG9wLWNvbG9yOiMzRkE5MkQiLz4NCgkJCTxzdG9wICBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiMzRkFFMkEiLz4NCgkJPC9saW5lYXJHcmFkaWVudD4NCgkJPHBhdGggY2xhc3M9InN0MTAiIGQ9Ik0yMDgsMTQ0LjRsLTQyLjIsMjQuM2MtMC42LDAuMy0xLjIsMC41LTEuOSwwLjZsMSwxLjVsNDctMjcuMXYtMC42bC0xLjMtMg0KCQkJQzIxMC4zLDE0Mi41LDIwOS4zLDE0My43LDIwOCwxNDQuNHoiLz4NCgk8L2c+DQo8L2c+DQo8L3N2Zz4NCg=="
+                alt="Node.js" class="nav__logo"></a></li>
+          <li class="nav__tabs"><a target="_blank" href="https://nodejs.org/en/download/">Download</a></li>
+          <li class="nav__tabs"><a target="_blank" href="https://nodejs.org/en/docs/">API Docs</a></li>
+          <li class="nav__tabs"><a target="_blank" href="https://github.com/nodejs/nodejs.dev">GitHub</a></li>
+        </ul>
+      </nav>
+      <main>
+        <div class="hero">
+          <h1>Introdução ao Node.js</h1>
+          <div class="diagonal-hero-bg">
+            <div class="stars">
+              <div class="small"></div>
+              <div class="medium"></div>
+              <div class="big"></div>
+            </div>
+          </div>
+        </div>
+        <nav class="side-nav"><button class="side-nav__open">Menu</button>
+          <ul class="side-nav__list">
+            <h2 class="side-nav__title" style="color: rgb(255, 255, 255);">Quick Start</h2><a
+              class="side-nav__item side-nav__item--active"
+              href="https://nodejs.dev/introduction-to-nodejs">Introdução ao Node.js</a><a class="side-nav__item "
+              href="https://nodejs.dev/a-brief-history-of-nodejs">A brief history of Node.js</a><a
+              class="side-nav__item " href="https://nodejs.dev/how-to-install-nodejs">How to install Node.js</a><a
+              class="side-nav__item "
+              href="https://nodejs.dev/how-much-javascript-do-you-need-to-know-to-use-nodejs">How much JavaScript do you
+              need to know to use Node.js?</a><a class="side-nav__item "
+              href="https://nodejs.dev/differences-between-nodejs-and-the-browser">Differences between Node.js and the
+              Browser</a>
+            <div class="sticky-sentinel sticky-sentinel--top"></div>
+            <div class="sticky-sentinel sticky-sentinel--bottom"></div>
+          </ul>
+          <ul class="side-nav__list">
+            <h2 class="side-nav__title" style="color: rgb(0, 0, 0);">Getting Started</h2><a class="side-nav__item "
+              href="https://nodejs.dev/the-v8-javascript-engine">The V8 JavaScript Engine</a><a class="side-nav__item "
+              href="https://nodejs.dev/run-nodejs-scripts-from-the-command-line">Run Node.js scripts from the command
+              line</a><a class="side-nav__item " href="https://nodejs.dev/how-to-exit-from-a-nodejs-program">How to exit
+              from a Node.js program</a><a class="side-nav__item "
+              href="https://nodejs.dev/how-to-read-environment-variables-from-nodejs">How to read environment variables
+              from Node.js</a><a class="side-nav__item " href="https://nodejs.dev/where-to-host-a-nodejs-app">Where to
+              host a Node.js app</a><a class="side-nav__item " href="https://nodejs.dev/how-to-use-the-nodejs-repl">How
+              to use the Node.js REPL</a><a class="side-nav__item "
+              href="https://nodejs.dev/nodejs-accept-arguments-from-the-command-line">Node.js, accept arguments from the
+              command line</a><a class="side-nav__item "
+              href="https://nodejs.dev/output-to-the-command-line-using-nodejs">Output to the command line using
+              Node.js</a><a class="side-nav__item "
+              href="https://nodejs.dev/accept-input-from-the-command-line-in-nodejs">Accept input from the command line
+              in Node.js</a><a class="side-nav__item "
+              href="https://nodejs.dev/expose-functionality-from-a-nodejs-file-using-exports">Expose functionality from
+              a Node.js file using exports</a><a class="side-nav__item "
+              href="https://nodejs.dev/an-introduction-to-the-npm-package-manager">An introduction to the npm package
+              manager</a><a class="side-nav__item " href="https://nodejs.dev/where-does-npm-install-the-packages">Where
+              does npm install the packages?</a><a class="side-nav__item "
+              href="https://nodejs.dev/how-to-use-or-execute-a-package-installed-using-npm">How to use or execute a
+              package installed using npm</a><a class="side-nav__item "
+              href="https://nodejs.dev/the-package-json-guide">The package.json guide</a><a class="side-nav__item "
+              href="https://nodejs.dev/the-package-lock-json-file">The package-lock.json file</a><a
+              class="side-nav__item " href="https://nodejs.dev/find-the-installed-version-of-an-npm-package">Find the
+              installed version of an npm package</a><a class="side-nav__item "
+              href="https://nodejs.dev/install-an-older-version-of-an-npm-package">Install an older version of an npm
+              package</a><a class="side-nav__item "
+              href="https://nodejs.dev/update-all-the-nodejs-dependencies-to-their-latest-version">Update all the
+              Node.js dependencies to their latest version</a><a class="side-nav__item "
+              href="https://nodejs.dev/semantic-versioning-using-npm">Semantic Versioning using npm</a><a
+              class="side-nav__item " href="https://nodejs.dev/uninstalling-npm-packages">Uninstalling npm
+              packages</a><a class="side-nav__item " href="https://nodejs.dev/npm-global-or-local-packages">npm global
+              or local packages</a><a class="side-nav__item "
+              href="https://nodejs.dev/npm-dependencies-and-devdependencies">npm dependencies and devDependencies</a><a
+              class="side-nav__item " href="https://nodejs.dev/the-npx-nodejs-package-runner">The npx Node.js Package
+              Runner</a><a class="side-nav__item " href="https://nodejs.dev/the-nodejs-event-loop">The Node.js Event
+              Loop</a><a class="side-nav__item " href="https://nodejs.dev/understanding-process-nexttick">Understanding
+              process.nextTick()</a><a class="side-nav__item "
+              href="https://nodejs.dev/understanding-setimmediate">Understanding setImmediate()</a><a
+              class="side-nav__item " href="https://nodejs.dev/discover-javascript-timers">Discover JavaScript
+              Timers</a><a class="side-nav__item "
+              href="https://nodejs.dev/javascript-asynchronous-programming-and-callbacks">JavaScript Asynchronous
+              Programming and Callbacks</a><a class="side-nav__item "
+              href="https://nodejs.dev/understanding-javascript-promises">Understanding JavaScript Promises</a><a
+              class="side-nav__item "
+              href="https://nodejs.dev/modern-asynchronous-javascript-with-async-and-await">Modern Asynchronous
+              JavaScript with Async and Await</a><a class="side-nav__item "
+              href="https://nodejs.dev/the-nodejs-event-emitter">The Node.js Event emitter</a><a class="side-nav__item "
+              href="https://nodejs.dev/build-an-http-server">Build an HTTP Server</a><a class="side-nav__item "
+              href="https://nodejs.dev/making-http-requests-with-nodejs">Making HTTP requests with Node.js</a><a
+              class="side-nav__item " href="https://nodejs.dev/make-an-http-post-request-using-nodejs">Make an HTTP POST
+              request using Node.js</a><a class="side-nav__item "
+              href="https://nodejs.dev/get-http-request-body-data-using-nodejs">Get HTTP request body data using
+              Node.js</a><a class="side-nav__item "
+              href="https://nodejs.dev/working-with-file-descriptors-in-nodejs">Working with file descriptors in
+              Node.js</a><a class="side-nav__item " href="https://nodejs.dev/nodejs-file-stats">Node.js file stats</a><a
+              class="side-nav__item " href="https://nodejs.dev/nodejs-file-paths">Node.js File Paths</a><a
+              class="side-nav__item " href="https://nodejs.dev/reading-files-with-nodejs">Reading files with
+              Node.js</a><a class="side-nav__item " href="https://nodejs.dev/writing-files-with-nodejs">Writing files
+              with Node.js</a><a class="side-nav__item "
+              href="https://nodejs.dev/working-with-folders-in-nodejs">Working with folders in Node.js</a><a
+              class="side-nav__item " href="https://nodejs.dev/the-nodejs-fs-module">The Node.js fs module</a><a
+              class="side-nav__item " href="https://nodejs.dev/the-nodejs-path-module">The Node.js path module</a><a
+              class="side-nav__item " href="https://nodejs.dev/the-nodejs-os-module">The Node.js os module</a><a
+              class="side-nav__item " href="https://nodejs.dev/the-nodejs-events-module">The Node.js events module</a><a
+              class="side-nav__item " href="https://nodejs.dev/the-nodejs-http-module">The Node.js http module</a><a
+              class="side-nav__item " href="https://nodejs.dev/nodejs-buffers">Node.js Buffers</a><a
+              class="side-nav__item " href="https://nodejs.dev/nodejs-streams">Node.js Streams</a><a
+              class="side-nav__item "
+              href="https://nodejs.dev/nodejs-the-difference-between-development-and-production">Node.js, the difference
+              between development and production</a><a class="side-nav__item "
+              href="https://nodejs.dev/error-handling-in-nodejs">Error handling in Node.js</a><a class="side-nav__item "
+              href="https://nodejs.dev/how-to-log-an-object-in-nodejs">How to log an object in Node.js</a>
+            <div class="sticky-sentinel sticky-sentinel--top"></div>
+            <div class="sticky-sentinel sticky-sentinel--bottom"></div>
+          </ul>
+        </nav>
+        <article class="article-reader">
+          <h1 class="article-reader__headline">Introdução ao Node.js</h1>
+          <details class="toc">
+            <summary>
+              <h6>Tabela de conteúdos</h6>
+            </summary>
+            <div>
+              <ul>
+                <li><a href="https://nodejs.dev/introduction-to-nodejs/#a-vast-number-of-libraries">Um vasto número de
+                    bibliotecas</a></li>
+                <li><a href="https://nodejs.dev/introduction-to-nodejs/#an-example-nodejs-application">Uma aplicação
+                    exemplo em Node.js</a></li>
+                <li><a href="https://nodejs.dev/introduction-to-nodejs/#nodejs-frameworks-and-tools">Node.js Frameworks
+                    e Ferramentas</a></li>
+              </ul>
+            </div>
+          </details>
+          <div>
+            <p>Node.js é um ambiente de execução multiplatafora e de código aberto. É uma ferramenta popular para
+              qualquer tipo de projeto!</p>
+            <p>Node.js roda o engina V8 do JavaScript, o núcleo do Google chrome,
+              fora do browser. Isso permite o Node.js ter uma ótima performance.</p>
+            <p>Uma aplicação Node.js roda em só um process(single-threaded),sem criar uma thread para cada requisição.
+              Node.js fornece um conjunto de I/O assincrono em sua biblioteca padrão que previne o código JavaScript de ficar bloquado  e bilbiotecas 
+              paradigmas de não-bloqueio, fazendo o comportamento de bloqueio ser a excessão ao invés da regra.</p>
+            <p>Quando o Node.js precisa peformar uma operação I/O, como ler dados da rede, 
+              acessar um banco de dados ou arquivos do sistema, ao invés de bloquear a thread e disperdiçar ciclos de CPU esperando, Node.js vai retornar a operação quando obter um resultado.</p>
+            <p>Isso permite que o Node.js lide com milhares de conexões concorrentes
+              com um único servidorsem dar inicio o fardo de lidar com concorrencia threads, o que pode ser uma fonte de bugs significável.</p>
+            <p>Node.js tem uma vantagem única porque mlhares de desenvolvedores Front-end que programam em JavaScript para o Browser
+              agora podem escrever para o Servidor
+              the server-side code in addition to the client-side code without the
+              need to learn a completely different language.</p>
+            <p>In Node.js the new ECMAScript standards can be used without problems,
+              as you don't have to wait for all your users to update their browsers -
+              you are in charge of deciding which ECMAScript version to use by
+              changing the Node.js version, and you can also enable specific
+              experimental features by running Node.js with flags.</p>
+            <h2 id="a-vast-number-of-libraries"><a href="#a-vast-number-of-libraries"
+                aria-label="a vast number of libraries permalink" class="autolink-headers"><svg aria-hidden="true"
+                  height="20" version="1.1" viewBox="0 0 16 16" width="20">
+                  <path fill-rule="evenodd"
+                    d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                  </path>
+                </svg></a>A Vast Number of Libraries</h2>
+            <p>npm with its simple structure helped the ecosystem of Node.js
+              proliferate, and now the npm registry hosts over 1,000,000 open source
+              packages you can freely use.</p>
+            <h2 id="an-example-nodejs-application"><a href="#an-example-nodejs-application"
+                aria-label="an example nodejs application permalink" class="autolink-headers"><svg aria-hidden="true"
+                  height="20" version="1.1" viewBox="0 0 16 16" width="20">
+                  <path fill-rule="evenodd"
+                    d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                  </path>
+                </svg></a>An Example Node.js Application</h2>
+            <p>The most common example Hello World of Node.js is a web server:</p>
+            <iframe allow="geolocation; microphone; camera; midi; encrypted-media"
+              src="https://glitch.com/embed/#!/embed/nodejs-dev-0001-01?path=server.js&amp;previewSize=30&amp;attributionHidden=true&amp;sidebarCollapsed=true"
+              alt="nodejs-dev-0001-01 on Glitch" style="height: 400px; width: 100%; border: 0;">
+            </iframe>
+            <!--```js
+const http = require('http')
+
+const hostname = '127.0.0.1'
+const port = 3000
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200
+  res.setHeader('Content-Type', 'text/plain')
+  res.end('Hello World\n')
+})
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`)
+})
+```
+
+To run this snippet, save it as a `server.js` file and run `node server.js` in your terminal.-->
+            <p>This code first includes the Node.js <a href="https://nodejs.org/api/http.html"><code
+                  class="language-text">http</code> module</a>.</p>
+            <p>Node.js has a fantastic <a href="https://nodejs.org/api/">standard library</a>, including first-class
+              support for networking.</p>
+            <p>The <code class="language-text">createServer()</code> method of <code class="language-text">http</code>
+              creates a new HTTP server and returns it.</p>
+            <p>The server is set to listen on the specified port and hostname. When
+              the server is ready, the callback function is called, in this case
+              informing us that the server is running.</p>
+            <p>Whenever a new request is received, the <a
+                href="https://nodejs.org/api/http.html#http_event_request"><code class="language-text">request</code>
+                event</a> is called, providing two objects: a request (an <a
+                href="https://nodejs.org/api/http.html#http_class_http_incomingmessage"><code
+                  class="language-text">http.IncomingMessage</code></a> object) and a response (an <a
+                href="https://nodejs.org/api/http.html#http_class_http_serverresponse"><code
+                  class="language-text">http.ServerResponse</code></a> object).</p>
+            <p>Those 2 objects are essential to handle the HTTP call.</p>
+            <p>The first provides the request details. In this simple example, this
+              is not used, but you could access the request headers and request data.</p>
+            <p>The second is used to return data to the caller.</p>
+            <p>In this case with:</p>
+            <div class="gatsby-highlight" data-language="javascript">
+              <pre
+                class="language-javascript"><code class="language-javascript">res<span class="token punctuation">.</span>statusCode <span class="token operator">=</span> <span class="token number">200</span></code></pre>
+            </div>
+            <p>we set the statusCode property to 200, to indicate a successful response.</p>
+            <p>We set the Content-Type header:</p>
+            <div class="gatsby-highlight" data-language="javascript">
+              <pre
+                class="language-javascript"><code class="language-javascript">res<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">'Content-Type'</span><span class="token punctuation">,</span> <span class="token string">'text/plain'</span><span class="token punctuation">)</span></code></pre>
+            </div>
+            <p>and we end close the response, adding the content as an argument to <code
+                class="language-text">end()</code>:</p>
+            <div class="gatsby-highlight" data-language="javascript">
+              <pre
+                class="language-javascript"><code class="language-javascript">res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'Hello World\n'</span><span class="token punctuation">)</span></code></pre>
+            </div>
+            <h2 id="nodejs-frameworks-and-tools"><a href="#nodejs-frameworks-and-tools"
+                aria-label="nodejs frameworks and tools permalink" class="autolink-headers"><svg aria-hidden="true"
+                  height="20" version="1.1" viewBox="0 0 16 16" width="20">
+                  <path fill-rule="evenodd"
+                    d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                  </path>
+                </svg></a>Node.js Frameworks and Tools</h2>
+            <p>Node.js is a low-level platform. In order to make things easy and
+              exciting for developers, thousands of libraries were built upon Node.js
+              by the community.</p>
+            <p>Many of those established over time as popular options. Here is a non-comprehensive list of the ones
+              worth learning:</p>
+            <ul>
+              <li><a href="https://adonisjs.com/"><strong>AdonisJs</strong></a>: A
+                full-stack framework highly focused on developer ergonomics, stability,
+                and confidence. Adonis is one of the fastest Node.js web frameworks.</li>
+              <li><a href="https://expressjs.com/"><strong>Express</strong></a>: It
+                provides one of the most simple yet powerful ways to create a web
+                server. Its minimalist approach, unopinionated, focused on the core
+                features of a server, is key to its success.</li>
+              <li><a href="https://fastify.io/"><strong>Fastify</strong></a>: A web
+                framework highly focused on providing the best developer experience with
+                the least overhead and a powerful plugin architecture. Fastify is one
+                of the fastest Node.js web frameworks.</li>
+              <li><a href="https://hapijs.com/"><strong>hapi</strong></a>: A rich
+                framework for building applications and services that enables developers
+                to focus on writing reusable application logic instead of spending time
+                building infrastructure.</li>
+              <li><a href="http://koajs.com/"><strong>koa</strong></a>: It is built by
+                the same team behind Express, aims to be even simpler and smaller,
+                building on top of years of knowledge. The new project born out of the
+                need to create incompatible changes without disrupting the existing
+                community.</li>
+              <li><a href="https://loopback.io/"><strong>Loopback.io</strong></a>: Makes it easy to build modern
+                applications that require complex integrations.</li>
+              <li><a href="https://meteor.com/"><strong>Meteor</strong></a>: An
+                incredibly powerful full-stack framework, powering you with an
+                isomorphic approach to building apps with JavaScript, sharing code on
+                the client and the server. Once an off-the-shelf tool that provided
+                everything, now integrates with frontend libs <a href="https://reactjs.org/">React</a>, <a
+                  href="https://vuejs.org/">Vue</a>, and <a href="https://angular.io/">Angular</a>. Can be used to
+                create mobile apps as well.</li>
+              <li><a href="https://github.com/zeit/micro"><strong>Micro</strong></a>: It provides a very lightweight
+                server to create asynchronous HTTP microservices.</li>
+              <li><a href="https://nestjs.com/"><strong>NestJS</strong></a>: A
+                TypeScript based progressive Node.js framework for building
+                enterprise-grade efficient, reliable and scalable server-side
+                applications.</li>
+              <li><a href="https://nextjs.org/"><strong>Next.js</strong></a>: A framework to render server-side rendered
+                <a href="https://reactjs.org/">React</a> applications.</li>
+              <li><a href="https://nx.dev/"><strong>Nx</strong></a>: It powers the Angular CLI which allows building
+                full-stack applications using NestJS, Express, and <a href="https://angular.io/">Angular</a> and easily
+                share code between backends and frontends.</li>
+              <li><a href="https://socket.io/"><strong>Socket.io</strong></a>: A real-time communication engine to build
+                network applications.</li>
+            </ul>
+          </div>
+          <ul class="css-2lvb1x">
+            <h5>Contributors</h5>
+            <li class="css-o9b79t"><a href="https://github.com/flaviocopes" title="flaviocopes" target="_blank"
+                rel="noopener noreferrer" style="margin-left:0" class="css-1sipr6q"><img class="author-img css-13co0gt"
+                  src="Introduction%20to%20Node.js_arquivos/flaviocopes.png" alt="flaviocopes"></a></li>
+            <li class="css-o9b79t"><a href="https://github.com/potch" title="potch" target="_blank"
+                rel="noopener noreferrer" class="css-1sipr6q"><img class="author-img css-13co0gt"
+                  src="Introduction%20to%20Node.js_arquivos/potch.png" alt="potch"></a></li>
+            <li class="css-o9b79t"><a href="https://github.com/MylesBorins" title="MylesBorins" target="_blank"
+                rel="noopener noreferrer" class="css-1sipr6q"><img class="author-img css-13co0gt"
+                  src="Introduction%20to%20Node.js_arquivos/MylesBorins.jpeg" alt="MylesBorins"></a></li>
+            <li class="css-o9b79t"><a href="https://github.com/RomainLanz" title="RomainLanz" target="_blank"
+                rel="noopener noreferrer" class="css-1sipr6q"><img class="author-img css-13co0gt"
+                  src="Introduction%20to%20Node.js_arquivos/RomainLanz.jpeg" alt="RomainLanz"></a></li>
+            <li class="css-o9b79t"><a href="https://github.com/virkt25" title="virkt25" target="_blank"
+                rel="noopener noreferrer" class="css-1sipr6q"><img class="author-img css-13co0gt"
+                  src="Introduction%20to%20Node.js_arquivos/virkt25.jpeg" alt="virkt25"></a></li>
+            <li class="css-o9b79t"><a href="https://github.com/Trott" title="Trott" target="_blank"
+                rel="noopener noreferrer" class="css-1sipr6q"><img class="author-img css-13co0gt"
+                  src="Introduction%20to%20Node.js_arquivos/Trott.jpeg" alt="Trott"></a></li>
+            <li class="css-o9b79t"><a href="https://github.com/onel0p3z" title="onel0p3z" target="_blank"
+                rel="noopener noreferrer" class="css-1sipr6q"><img class="author-img css-13co0gt"
+                  src="Introduction%20to%20Node.js_arquivos/onel0p3z.jpeg" alt="onel0p3z"></a></li>
+            <li class="css-o9b79t"><a href="https://github.com/ollelauribostrom" title="ollelauribostrom"
+                target="_blank" rel="noopener noreferrer" class="css-1sipr6q"><img class="author-img css-13co0gt"
+                  src="Introduction%20to%20Node.js_arquivos/ollelauribostrom.jpeg" alt="ollelauribostrom"></a></li>
+            <li class="css-o9b79t"><a href="https://github.com/MarkPieszak" title="MarkPieszak" target="_blank"
+                rel="noopener noreferrer" class="css-1sipr6q"><img class="author-img css-13co0gt"
+                  src="Introduction%20to%20Node.js_arquivos/MarkPieszak.jpeg" alt="MarkPieszak"></a></li>
+            <li class="css-o9b79t"><a href="https://github.com/fhemberger" title="fhemberger" target="_blank"
+                rel="noopener noreferrer" class="css-1sipr6q"><img class="author-img css-13co0gt"
+                  src="Introduction%20to%20Node.js_arquivos/fhemberger.jpeg" alt="fhemberger"></a></li>
+            <li class="css-o9b79t"><a href="https://github.com/LaRuaNa" title="LaRuaNa" target="_blank"
+                rel="noopener noreferrer" class="css-1sipr6q"><img class="author-img css-13co0gt"
+                  src="Introduction%20to%20Node.js_arquivos/LaRuaNa.jpeg" alt="LaRuaNa"></a></li>
+            <li class="css-o9b79t"><a href="https://github.com/FrozenPandaz" title="FrozenPandaz" target="_blank"
+                rel="noopener noreferrer" class="css-1sipr6q"><img class="author-img css-13co0gt"
+                  src="Introduction%20to%20Node.js_arquivos/FrozenPandaz.jpeg" alt="FrozenPandaz"></a></li>
+            <li class="css-o9b79t"><a href="https://github.com/mcollina" title="mcollina" target="_blank"
+                rel="noopener noreferrer" class="css-1sipr6q"><img class="author-img css-13co0gt"
+                  src="Introduction%20to%20Node.js_arquivos/mcollina.jpeg" alt="mcollina"></a></li>
+            <li class="css-o9b79t"><a href="https://github.com/amiller-gh" title="amiller-gh" target="_blank"
+                rel="noopener noreferrer" class="css-1sipr6q"><img class="author-img css-13co0gt"
+                  src="Introduction%20to%20Node.js_arquivos/amiller-gh.jpeg" alt="amiller-gh"></a></li>
+            <li class="css-o9b79t"><a href="https://github.com/ahmadawais" title="ahmadawais" target="_blank"
+                rel="noopener noreferrer" class="css-1sipr6q"><img class="author-img css-13co0gt"
+                  src="Introduction%20to%20Node.js_arquivos/ahmadawais.jpeg" alt="ahmadawais"></a></li>
+            <li class="css-o9b79t"><a href="https://github.com/saqibameen" title="saqibameen" target="_blank"
+                rel="noopener noreferrer" class="css-1sipr6q"><img class="author-img css-13co0gt"
+                  src="Introduction%20to%20Node.js_arquivos/saqibameen.jpeg" alt="saqibameen"></a></li>
+            <li class="css-o9b79t"><a href="https://github.com/dangen-effy" title="dangen-effy" target="_blank"
+                rel="noopener noreferrer" class="css-1sipr6q"><img class="author-img css-13co0gt"
+                  src="Introduction%20to%20Node.js_arquivos/dangen-effy.png" alt="dangen-effy"></a></li>
+            <li class="css-o9b79t"><a href="https://github.com/aymen94" title="aymen94" target="_blank"
+                rel="noopener noreferrer" class="css-1sipr6q"><img class="author-img css-13co0gt"
+                  src="Introduction%20to%20Node.js_arquivos/aymen94.png" alt="aymen94"></a></li>
+          </ul>
+          <div class="css-2imjyh"><a
+              href="https://github.com/nodejs/nodejs.dev/edit/master/src/documentation/0001-node-introduction/index.md"
+              class="css-1gz0srz"><span>Edit this page on GitHub</span> <svg fill="currentColor" height="1em"
+                width="1em" viewBox="0 0 40 40" class="css-1kbww1n">
+                <path
+                  d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z">
+                </path>
+              </svg></a></div>
+          <ul class="css-1hngnb6">
+            <li></li>
+            <li><a rel="next" class="css-awdy0f" href="https://nodejs.dev/a-brief-history-of-nodejs">Next &nbsp; →</a>
+            </li>
+          </ul>
+        </article>
+      </main>
+    </div>
+  </div>
+  <script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath = "/";/*]]>*/</script>
+  <script
+    id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping = { "app": ["/app-e8f5064dbbd859df9b62.js"], "component---node-modules-gatsby-plugin-offline-app-shell-js": ["/component---node-modules-gatsby-plugin-offline-app-shell-js-5efb7b8fb8a6286e0a5c.js"], "component---src-templates-learn-tsx": ["/component---src-templates-learn-tsx-9e21782b75ce6239a909.js"], "component---src-pages-404-tsx": ["/component---src-pages-404-tsx-cbdb55fdea5994745b7c.js"] };/*]]>*/</script>
+  <script src="Introduction%20to%20Node.js_arquivos/webpack-runtime-2a31b97e25ce0f845d50.js" async=""></script>
+  <script src="Introduction%20to%20Node.js_arquivos/app-e8f5064dbbd859df9b62.js" async=""></script>
+  <script src="Introduction%20to%20Node.js_arquivos/commons-43e99b6548dfc6cd919a.js" async=""></script>
+  <script src="Introduction%20to%20Node.js_arquivos/component---src-templates-learn-tsx-9e21782b75ce6239a909.js"
+    async=""></script>
+  <script src="Introduction%20to%20Node.js_arquivos/styles-6f952230aceed5b9dd96.js" async=""></script>
+</body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span
+    class="gr__triangle"></span></span>
+
+</html>
