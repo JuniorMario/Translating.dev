@@ -21,6 +21,8 @@ $ npm start
 
 Acesse `http://localhost:3000` e confira o resultado.
 
+## Para ser traduzido
+  - [Hashing Passwords with Node.js and Bcrypt](https://www.abeautifulsite.net/hashing-passwords-with-nodejs-and-bcrypt)
 
 ## Sumário
 ### Artigos md
